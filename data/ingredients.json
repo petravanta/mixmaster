@@ -566,10 +566,27 @@
   "id": "espresso",
   "name": "Espresso",
   "category": "fresh",
+  "family": "coffee",
+  "substitutes": [
+   "hot-coffee"
+  ],
   "shelfLifeDays": 1,
   "staple": true,
   "aliases": [
-   "coffee"
+   "cold brew"
+  ]
+ },
+ {
+  "id": "hot-coffee",
+  "name": "Hot coffee",
+  "category": "fresh",
+  "family": "coffee",
+  "shelfLifeDays": 1,
+  "staple": true,
+  "aliases": [
+   "coffee",
+   "brewed coffee",
+   "drip coffee"
   ]
  },
  {
@@ -611,6 +628,25 @@
   "aliases": [
    "maraschino cherry",
    "luxardo cherry"
+  ]
+ },
+ {
+  "id": "olive",
+  "name": "Olive",
+  "category": "pantry",
+  "aliases": [
+   "olives",
+   "cocktail olive",
+   "green olive"
+  ]
+ },
+ {
+  "id": "olive-brine",
+  "name": "Olive brine",
+  "category": "pantry",
+  "shelfLifeDays": 30,
+  "aliases": [
+   "olive juice"
   ]
  },
  {

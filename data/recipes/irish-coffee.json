@@ -1,0 +1,41 @@
+{
+ "id": "irish-coffee",
+ "name": "Irish Coffee",
+ "method": "build",
+ "glass": "wine",
+ "ingredients": [
+  {
+   "ingredient": "irish-whiskey",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "hot-coffee",
+   "amount": 90,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "demerara-syrup",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cream",
+   "amount": 30,
+   "unit": "ml",
+   "note": "lightly whipped"
+  }
+ ],
+ "steps": [
+  "Warm the glass with hot water and tip it out.",
+  "Add the whiskey, syrup and hot coffee and stir.",
+  "Float the lightly whipped cream on top over the back of a spoon. Don't stir."
+ ],
+ "tags": [
+  "coffee",
+  "creamy",
+  "after-dinner",
+  "classic"
+ ],
+ "origin": "Foynes, Ireland, 1940s"
+}
