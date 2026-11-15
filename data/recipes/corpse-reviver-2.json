@@ -1,0 +1,43 @@
+{
+ "id": "corpse-reviver-2",
+ "name": "Corpse Reviver No. 2",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "absinthe",
+   "amount": 1,
+   "unit": "rinse"
+  },
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cointreau",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lillet-blanc",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Rinse a chilled coupe with the absinthe and tip out the rest.",
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into the glass."
+ ],
+ "tags": [
+  "sour",
+  "citrus",
+  "classic"
+ ],
+ "origin": "London, 1930"
+}

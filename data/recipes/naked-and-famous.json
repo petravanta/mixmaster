@@ -1,0 +1,38 @@
+{
+ "id": "naked-and-famous",
+ "name": "Naked and Famous",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "mezcal",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "yellow-chartreuse",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "aperol",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "smoky",
+  "herbal",
+  "sour",
+  "modern-classic"
+ ],
+ "origin": "New York, 2011"
+}

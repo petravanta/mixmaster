@@ -1,0 +1,31 @@
+{
+ "id": "gimlet",
+ "name": "Gimlet",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 22.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "sour",
+  "citrus",
+  "classic"
+ ]
+}

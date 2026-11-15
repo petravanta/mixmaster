@@ -1,0 +1,38 @@
+{
+ "id": "manhattan",
+ "name": "Manhattan",
+ "method": "stir",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "rye-whiskey",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sweet-vermouth",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "angostura",
+   "amount": 2,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "cocktail-cherry",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled coupe.",
+  "Garnish with the cherry."
+ ],
+ "tags": [
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "New York, 1880s"
+}

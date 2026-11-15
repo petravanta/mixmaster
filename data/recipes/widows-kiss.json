@@ -1,0 +1,38 @@
+{
+ "id": "widows-kiss",
+ "name": "Widow's Kiss",
+ "method": "stir",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "calvados",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "benedictine",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "yellow-chartreuse",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "angostura",
+   "amount": 2,
+   "unit": "dash"
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled coupe."
+ ],
+ "tags": [
+  "herbal",
+  "spirit-forward",
+  "after-dinner",
+  "classic"
+ ],
+ "origin": "1890s"
+}

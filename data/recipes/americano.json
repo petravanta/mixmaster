@@ -1,0 +1,40 @@
+{
+ "id": "americano",
+ "name": "Americano",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "campari",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sweet-vermouth",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "soda-water",
+   "amount": 1,
+   "unit": "top"
+  },
+  {
+   "ingredient": "orange-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Build the Campari and vermouth over ice.",
+  "Top with soda, stir once and add the orange peel."
+ ],
+ "tags": [
+  "bitter",
+  "low-abv",
+  "sparkling",
+  "aperitif"
+ ],
+ "origin": "Milan, 1860s"
+}
