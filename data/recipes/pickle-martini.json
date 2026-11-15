@@ -1,0 +1,39 @@
+{
+ "id": "pickle-martini",
+ "name": "Pickle Martini",
+ "method": "stir",
+ "glass": "nick-and-nora",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 60,
+   "unit": "ml",
+   "note": "or vodka"
+  },
+  {
+   "ingredient": "dry-vermouth",
+   "amount": 10,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "pickle-juice",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "pickle",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled glass.",
+  "Garnish with a cornichon or a pickle spear."
+ ],
+ "tags": [
+  "spirit-forward",
+  "modern-classic"
+ ],
+ "why": "A Dirty Martini with dill brine instead of olive brine."
+}

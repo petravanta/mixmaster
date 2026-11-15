@@ -1,0 +1,27 @@
+{
+ "id": "pickleback",
+ "name": "Pickleback",
+ "method": "build",
+ "glass": "shot",
+ "ingredients": [
+  {
+   "ingredient": "irish-whiskey",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "pickle-juice",
+   "amount": 45,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Pour the whiskey and the pickle juice into two separate shot glasses.",
+  "Shoot the whiskey, then chase it with the pickle juice."
+ ],
+ "tags": [
+  "spirit-forward"
+ ],
+ "origin": "Brooklyn, 2006",
+ "why": "The brine wipes out the whiskey's burn, and the salt makes you want another."
+}
