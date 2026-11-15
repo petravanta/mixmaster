@@ -1,0 +1,34 @@
+{
+ "id": "white-russian",
+ "name": "White Russian",
+ "method": "build",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "coffee-liqueur",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cream",
+   "amount": 30,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Fill a rocks glass with ice and add the vodka and coffee liqueur.",
+  "Float the cream on top and stir as you drink."
+ ],
+ "tags": [
+  "coffee",
+  "creamy",
+  "sweet",
+  "after-dinner"
+ ],
+ "origin": "1960s"
+}
