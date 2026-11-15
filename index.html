@@ -426,8 +426,8 @@ function barView() {
 }
 const levelName = l => (LEVELS.find(x => x[0] === (l == null ? 1 : l)) || [0, Math.round((l || 0) * 100) + '% left'])[1];
 function matches(q) {
-  q = q.trim().toLowerCase(); if (!q) return [];
-  return C.list.map(i => { const w = C.words.get(i.id), n = i.name.toLowerCase(); const s = n.startsWith(q) ? 3 : n.includes(q) ? 2 : w.includes(q) ? 1 : 0; return { i, s }; })
+  q = Mix.fold(q.trim()); if (!q) return [];
+  return C.list.map(i => { const w = C.words.get(i.id), n = Mix.fold(i.name); const s = n.startsWith(q) ? 3 : n.includes(q) ? 2 : w.includes(q) ? 1 : 0; return { i, s }; })
     .filter(x => x.s).sort((a, b) => b.s - a.s || (C.uses.get(b.i.id) - C.uses.get(a.i.id))).slice(0, 8).map(x => x.i);
 }
 function wireBar() {

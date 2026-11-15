@@ -1,0 +1,36 @@
+{
+ "id": "twentieth-century",
+ "name": "20th Century",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lillet-blanc",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "creme-de-cacao",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "sour",
+  "classic"
+ ],
+ "origin": "London, 1937"
+}

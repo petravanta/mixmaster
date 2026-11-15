@@ -1,0 +1,32 @@
+{
+ "id": "appletini",
+ "name": "Appletini",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sour-apple-schnapps",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "sour",
+  "sweet",
+  "fruity"
+ ],
+ "origin": "Los Angeles, 1996"
+}

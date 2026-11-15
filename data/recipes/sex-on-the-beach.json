@@ -1,0 +1,37 @@
+{
+ "id": "sex-on-the-beach",
+ "name": "Sex on the Beach",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "peach-schnapps",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-juice",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cranberry-juice",
+   "amount": 60,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice.",
+  "Add everything and stir."
+ ],
+ "tags": [
+  "sweet",
+  "fruity"
+ ],
+ "origin": "Florida, 1980s"
+}

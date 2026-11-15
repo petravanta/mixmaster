@@ -1,0 +1,32 @@
+{
+ "id": "cuba-libre",
+ "name": "Cuba Libre",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "white-rum",
+   "amount": 50,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cola",
+   "amount": 120,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 10,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice.",
+  "Squeeze in the lime, add the rum and top with cola."
+ ],
+ "tags": [
+  "sparkling",
+  "classic"
+ ],
+ "origin": "Havana, around 1900"
+}

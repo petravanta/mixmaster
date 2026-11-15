@@ -1,0 +1,39 @@
+{
+ "id": "monte-carlo",
+ "name": "Monte Carlo",
+ "method": "stir",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "rye-whiskey",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "benedictine",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "angostura",
+   "amount": 2,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled coupe.",
+  "Express the lemon peel over the top."
+ ],
+ "tags": [
+  "herbal",
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "1940s"
+}
