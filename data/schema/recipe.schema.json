@@ -1,0 +1,37 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Recipe",
+ "description": "One cocktail, in data/recipes/<id>.json. Also the format of a recipe shared from the app.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["id", "name", "method", "glass", "ingredients", "steps", "tags"],
+ "properties": {
+  "format": { "const": "mixmaster-recipe", "description": "Only on a recipe shared from the app; leave it out of files in data/recipes/." },
+  "formatVersion": { "const": 1, "description": "Only on a recipe shared from the app." },
+  "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Stable id, the same as the file name. Never renamed once published, because people's history refers to it." },
+  "name": { "type": "string", "minLength": 1, "description": "The drink's name as the app shows it." },
+  "method": { "enum": ["shake", "dry-shake", "stir", "build", "blend", "swizzle"], "description": "How it's mixed. dry-shake means shaken without ice first, for egg white." },
+  "glass": { "type": "string", "description": "A glass id from data/glasses.json." },
+  "ingredients": {
+   "type": "array", "minItems": 1,
+   "description": "What goes in, in the order you add it.",
+   "items": {
+    "type": "object", "additionalProperties": false,
+    "required": ["ingredient", "amount", "unit"],
+    "properties": {
+     "ingredient": { "type": "string", "description": "An ingredient id from data/ingredients.json." },
+     "amount": { "type": "number", "exclusiveMinimum": 0, "description": "How much, in the unit below. Use ml for liquids (22.5 ml is ¾ oz); the app converts to oz for people who prefer it." },
+     "unit": { "enum": ["ml", "dash", "drop", "barspoon", "rinse", "top", "piece", "sprig", "pinch"], "description": "ml for measured liquids, dash and drop for bitters, rinse for coating the glass, top for filling up with soda or wine." },
+     "optional": { "type": "boolean", "description": "The drink still works without it. Not needed to count as makeable." },
+     "garnish": { "type": "boolean", "description": "A garnish. Shown, but never counted against the recipe when missing." },
+     "note": { "type": "string", "description": "A short note on this line (\"freshly squeezed\", \"or a sugar cube\")." }
+    }
+   }
+  },
+  "steps": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "description": "How to make it, one short sentence or two per step." },
+  "tags": { "type": "array", "uniqueItems": true, "items": { "enum": ["bitter", "sour", "spirit-forward", "herbal", "citrus", "tiki", "sparkling", "smoky", "coffee", "sweet", "egg-white", "low-abv", "aperitif", "after-dinner", "classic", "modern-classic"] }, "description": "Style tags people can filter by. A new tag means adding it here too." },
+  "origin": { "type": "string", "description": "Where and when it comes from, if known (\"Florence, around 1919\")." },
+  "why": { "type": "string", "description": "Optional: what makes the drink work, or a tip that isn't obvious from the steps." },
+  "contributor": { "type": "string", "description": "Optional: the GitHub name of whoever added it, to credit them in the app." }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "id": "margarita",
+ "name": "Margarita",
+ "method": "shake",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "tequila-blanco",
+   "amount": 50,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cointreau",
+   "amount": 20,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 25,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "salt",
+   "amount": 1,
+   "unit": "pinch",
+   "optional": true
+  }
+ ],
+ "steps": [
+  "Salt half the rim if you like.",
+  "Shake hard with ice for 10 to 12 seconds and fine-strain over fresh ice."
+ ],
+ "tags": [
+  "sour",
+  "citrus",
+  "classic"
+ ]
+}

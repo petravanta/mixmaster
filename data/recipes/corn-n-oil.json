@@ -1,0 +1,38 @@
+{
+ "id": "corn-n-oil",
+ "name": "Corn 'n' Oil",
+ "method": "build",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "blackstrap-rum",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "velvet-falernum",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "angostura",
+   "amount": 3,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 7.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Build over crushed or cracked ice and stir.",
+  "Squeeze in a lime wedge."
+ ],
+ "tags": [
+  "tiki",
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "Barbados"
+}

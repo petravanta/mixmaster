@@ -1,0 +1,37 @@
+{
+ "id": "last-word",
+ "name": "Last Word",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "green-chartreuse",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "maraschino",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "herbal",
+  "sour",
+  "classic"
+ ],
+ "origin": "Detroit Athletic Club, around 1916"
+}

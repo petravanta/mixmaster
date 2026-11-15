@@ -1,0 +1,39 @@
+name: Suggest a recipe
+description: Propose a cocktail for the catalog, no git needed.
+title: "Recipe: "
+labels: [recipe]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks! Someone will turn this into a recipe file. Use ml if you can (22.5 ml is ¾ oz).
+  - type: input
+    id: name
+    attributes: { label: Name, placeholder: "Last Word" }
+    validations: { required: true }
+  - type: textarea
+    id: ingredients
+    attributes:
+      label: Ingredients
+      description: One per line, with the amount.
+      placeholder: |
+        22.5 ml gin
+        22.5 ml green Chartreuse
+        22.5 ml maraschino liqueur
+        22.5 ml lime juice
+    validations: { required: true }
+  - type: dropdown
+    id: method
+    attributes: { label: Method, options: [shake, dry-shake, stir, build, blend, swizzle] }
+    validations: { required: true }
+  - type: input
+    id: glass
+    attributes: { label: Glass, placeholder: "coupe" }
+  - type: textarea
+    id: steps
+    attributes: { label: Steps, placeholder: "Shake with ice and fine-strain into a chilled coupe." }
+  - type: input
+    id: origin
+    attributes: { label: Where it comes from (optional), placeholder: "Detroit Athletic Club, around 1916" }
+  - type: textarea
+    id: why
+    attributes: { label: Why it belongs here (optional), description: "What makes it work, or which lonely bottle it finally uses up." }

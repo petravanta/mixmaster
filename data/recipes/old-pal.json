@@ -1,0 +1,39 @@
+{
+ "id": "old-pal",
+ "name": "Old Pal",
+ "method": "stir",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "rye-whiskey",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "campari",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "dry-vermouth",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled coupe.",
+  "Garnish with the lemon peel."
+ ],
+ "tags": [
+  "bitter",
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "Paris, 1920s"
+}

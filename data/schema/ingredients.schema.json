@@ -1,0 +1,22 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Ingredients",
+ "description": "Everything a recipe can call for, and what people can keep in their bar. The order in the file is the order the app shows.",
+ "type": "array",
+ "items": {
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "category"],
+  "properties": {
+   "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Stable id. Recipes and people's bars refer to it, so it never changes once published." },
+   "name": { "type": "string", "minLength": 1, "description": "What the app shows." },
+   "category": { "enum": ["spirit", "liqueur", "fortified-wine", "wine", "bitters", "syrup", "juice", "fresh", "mixer", "pantry"], "description": "Kind of ingredient. Missing a spirit or liqueur counts heavily against a recipe; missing a juice or fresh item counts less, because it is a quick shop." },
+   "family": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Loose group of ingredients that can stand in for each other at a stretch (whiskey, rum, amaro). A stand-in from the same family counts as a rough substitute." },
+   "substitutes": { "type": "array", "uniqueItems": true, "items": { "type": "string" }, "description": "Ingredient ids that work well in place of this one (rye for bourbon). Counts as a close substitute. One-way: list it on both if it works both ways." },
+   "shelfLifeDays": { "type": "integer", "minimum": 1, "description": "Roughly how many days it stays good once opened (vermouth about six weeks, fino sherry two). Opened bottles near or past this are pushed up the recommendations." },
+   "specialty": { "type": "boolean", "description": "A bottle most bars buy for one or two drinks and then struggle to finish (crème de violette, falernum). Recipes that use one up get a boost." },
+   "staple": { "type": "boolean", "description": "Something most people have or can grab on the way home (citrus, simple syrup, soda). Missing it barely counts against a recipe." },
+   "aliases": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 }, "description": "Other names people search by, lowercase (\"triple sec\" for Cointreau)." }
+  }
+ }
+}

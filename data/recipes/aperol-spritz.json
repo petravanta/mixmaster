@@ -1,0 +1,40 @@
+{
+ "id": "aperol-spritz",
+ "name": "Aperol Spritz",
+ "method": "build",
+ "glass": "wine",
+ "ingredients": [
+  {
+   "ingredient": "prosecco",
+   "amount": 90,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "aperol",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "soda-water",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Fill a wine glass with ice and add the prosecco, then the Aperol, then the soda.",
+  "Stir gently and garnish."
+ ],
+ "tags": [
+  "bitter",
+  "low-abv",
+  "sparkling",
+  "aperitif"
+ ],
+ "origin": "Veneto"
+}

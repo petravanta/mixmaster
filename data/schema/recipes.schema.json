@@ -1,0 +1,8 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Recipe list",
+ "description": "The ids of every recipe in data/recipes/, one file each (data/recipes/<id>.json), in the order the app lists them.",
+ "type": "array",
+ "uniqueItems": true,
+ "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "A recipe id, the name of its file without .json." }
+}

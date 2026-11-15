@@ -1,0 +1,39 @@
+{
+ "id": "hanky-panky",
+ "name": "Hanky Panky",
+ "method": "stir",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sweet-vermouth",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "fernet-branca",
+   "amount": 7.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled coupe.",
+  "Express the orange peel over the top."
+ ],
+ "tags": [
+  "bitter",
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "The Savoy, London, 1900s"
+}

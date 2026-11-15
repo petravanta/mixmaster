@@ -1,0 +1,37 @@
+{
+ "id": "trinidad-sour",
+ "name": "Trinidad Sour",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "angostura",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orgeat",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "rye-whiskey",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe.",
+  "Yes, that is 45 ml of bitters."
+ ],
+ "tags": [
+  "sour",
+  "modern-classic"
+ ],
+ "origin": "New York, 2008"
+}

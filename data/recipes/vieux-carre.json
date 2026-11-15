@@ -1,0 +1,54 @@
+{
+ "id": "vieux-carre",
+ "name": "Vieux Carré",
+ "method": "stir",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "rye-whiskey",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cognac",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sweet-vermouth",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "benedictine",
+   "amount": 1,
+   "unit": "barspoon"
+  },
+  {
+   "ingredient": "peychauds",
+   "amount": 2,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "angostura",
+   "amount": 2,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain over a large ice cube.",
+  "Garnish with the lemon peel."
+ ],
+ "tags": [
+  "spirit-forward",
+  "classic",
+  "after-dinner"
+ ],
+ "origin": "New Orleans, 1938"
+}

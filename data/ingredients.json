@@ -1,0 +1,516 @@
+[
+ {
+  "id": "london-dry-gin",
+  "name": "London dry gin",
+  "category": "spirit",
+  "family": "gin",
+  "aliases": [
+   "gin"
+  ]
+ },
+ {
+  "id": "vodka",
+  "name": "Vodka",
+  "category": "spirit"
+ },
+ {
+  "id": "bourbon",
+  "name": "Bourbon",
+  "category": "spirit",
+  "family": "whiskey",
+  "substitutes": [
+   "rye-whiskey"
+  ]
+ },
+ {
+  "id": "rye-whiskey",
+  "name": "Rye whiskey",
+  "category": "spirit",
+  "family": "whiskey",
+  "substitutes": [
+   "bourbon"
+  ],
+  "aliases": [
+   "rye"
+  ]
+ },
+ {
+  "id": "irish-whiskey",
+  "name": "Irish whiskey",
+  "category": "spirit",
+  "family": "whiskey"
+ },
+ {
+  "id": "white-rum",
+  "name": "White rum",
+  "category": "spirit",
+  "family": "rum",
+  "aliases": [
+   "light rum"
+  ]
+ },
+ {
+  "id": "aged-rum",
+  "name": "Aged Jamaican rum",
+  "category": "spirit",
+  "family": "rum",
+  "aliases": [
+   "dark rum",
+   "jamaican rum"
+  ]
+ },
+ {
+  "id": "blackstrap-rum",
+  "name": "Blackstrap rum",
+  "category": "spirit",
+  "family": "rum",
+  "substitutes": [
+   "aged-rum"
+  ],
+  "specialty": true
+ },
+ {
+  "id": "tequila-blanco",
+  "name": "Tequila blanco",
+  "category": "spirit",
+  "family": "agave",
+  "aliases": [
+   "tequila"
+  ]
+ },
+ {
+  "id": "mezcal",
+  "name": "Mezcal",
+  "category": "spirit",
+  "family": "agave"
+ },
+ {
+  "id": "cognac",
+  "name": "Cognac",
+  "category": "spirit",
+  "family": "brandy",
+  "aliases": [
+   "brandy"
+  ]
+ },
+ {
+  "id": "calvados",
+  "name": "Calvados",
+  "category": "spirit",
+  "family": "brandy",
+  "specialty": true,
+  "aliases": [
+   "apple brandy"
+  ]
+ },
+ {
+  "id": "pisco",
+  "name": "Pisco",
+  "category": "spirit",
+  "family": "brandy",
+  "specialty": true
+ },
+ {
+  "id": "absinthe",
+  "name": "Absinthe",
+  "category": "spirit",
+  "specialty": true,
+  "aliases": [
+   "pastis"
+  ]
+ },
+ {
+  "id": "campari",
+  "name": "Campari",
+  "category": "liqueur",
+  "family": "bitter-aperitivo"
+ },
+ {
+  "id": "aperol",
+  "name": "Aperol",
+  "category": "liqueur",
+  "family": "bitter-aperitivo"
+ },
+ {
+  "id": "green-chartreuse",
+  "name": "Green Chartreuse",
+  "category": "liqueur",
+  "family": "chartreuse",
+  "specialty": true
+ },
+ {
+  "id": "yellow-chartreuse",
+  "name": "Yellow Chartreuse",
+  "category": "liqueur",
+  "family": "chartreuse",
+  "specialty": true
+ },
+ {
+  "id": "maraschino",
+  "name": "Maraschino liqueur",
+  "category": "liqueur",
+  "specialty": true,
+  "aliases": [
+   "luxardo"
+  ]
+ },
+ {
+  "id": "creme-de-violette",
+  "name": "Crème de violette",
+  "category": "liqueur",
+  "specialty": true,
+  "aliases": [
+   "violette"
+  ]
+ },
+ {
+  "id": "cointreau",
+  "name": "Cointreau",
+  "category": "liqueur",
+  "family": "orange-liqueur",
+  "substitutes": [
+   "orange-curacao"
+  ],
+  "aliases": [
+   "triple sec"
+  ]
+ },
+ {
+  "id": "orange-curacao",
+  "name": "Orange curaçao",
+  "category": "liqueur",
+  "family": "orange-liqueur",
+  "substitutes": [
+   "cointreau"
+  ],
+  "aliases": [
+   "curacao",
+   "dry curacao"
+  ]
+ },
+ {
+  "id": "benedictine",
+  "name": "Bénédictine",
+  "category": "liqueur",
+  "specialty": true
+ },
+ {
+  "id": "amaro-nonino",
+  "name": "Amaro Nonino",
+  "category": "liqueur",
+  "family": "amaro",
+  "specialty": true
+ },
+ {
+  "id": "fernet-branca",
+  "name": "Fernet-Branca",
+  "category": "liqueur",
+  "family": "amaro",
+  "specialty": true,
+  "aliases": [
+   "fernet"
+  ]
+ },
+ {
+  "id": "amer-picon",
+  "name": "Amer Picon",
+  "category": "liqueur",
+  "family": "amaro",
+  "specialty": true,
+  "aliases": [
+   "picon"
+  ]
+ },
+ {
+  "id": "suze",
+  "name": "Suze",
+  "category": "liqueur",
+  "family": "gentian",
+  "specialty": true,
+  "aliases": [
+   "gentian liqueur"
+  ]
+ },
+ {
+  "id": "coffee-liqueur",
+  "name": "Coffee liqueur",
+  "category": "liqueur",
+  "aliases": [
+   "kahlua"
+  ]
+ },
+ {
+  "id": "amaretto",
+  "name": "Amaretto",
+  "category": "liqueur"
+ },
+ {
+  "id": "velvet-falernum",
+  "name": "Velvet falernum",
+  "category": "liqueur",
+  "specialty": true,
+  "aliases": [
+   "falernum"
+  ]
+ },
+ {
+  "id": "sweet-vermouth",
+  "name": "Sweet vermouth",
+  "category": "fortified-wine",
+  "family": "vermouth",
+  "shelfLifeDays": 42,
+  "aliases": [
+   "rosso",
+   "red vermouth"
+  ]
+ },
+ {
+  "id": "dry-vermouth",
+  "name": "Dry vermouth",
+  "category": "fortified-wine",
+  "family": "vermouth",
+  "substitutes": [
+   "blanc-vermouth"
+  ],
+  "shelfLifeDays": 42,
+  "aliases": [
+   "french vermouth"
+  ]
+ },
+ {
+  "id": "blanc-vermouth",
+  "name": "Blanc vermouth",
+  "category": "fortified-wine",
+  "family": "vermouth",
+  "substitutes": [
+   "lillet-blanc",
+   "dry-vermouth"
+  ],
+  "shelfLifeDays": 42,
+  "aliases": [
+   "bianco"
+  ]
+ },
+ {
+  "id": "lillet-blanc",
+  "name": "Lillet blanc",
+  "category": "fortified-wine",
+  "family": "aromatised-wine",
+  "substitutes": [
+   "blanc-vermouth"
+  ],
+  "shelfLifeDays": 42,
+  "aliases": [
+   "lillet",
+   "cocchi americano"
+  ]
+ },
+ {
+  "id": "fino-sherry",
+  "name": "Fino sherry",
+  "category": "fortified-wine",
+  "family": "sherry",
+  "shelfLifeDays": 14,
+  "aliases": [
+   "fino",
+   "manzanilla"
+  ]
+ },
+ {
+  "id": "prosecco",
+  "name": "Prosecco",
+  "category": "wine",
+  "family": "sparkling",
+  "substitutes": [
+   "champagne"
+  ],
+  "shelfLifeDays": 2
+ },
+ {
+  "id": "champagne",
+  "name": "Champagne",
+  "category": "wine",
+  "family": "sparkling",
+  "substitutes": [
+   "prosecco"
+  ],
+  "shelfLifeDays": 2,
+  "aliases": [
+   "sparkling wine",
+   "cava"
+  ]
+ },
+ {
+  "id": "angostura",
+  "name": "Angostura bitters",
+  "category": "bitters",
+  "aliases": [
+   "aromatic bitters"
+  ]
+ },
+ {
+  "id": "peychauds",
+  "name": "Peychaud's bitters",
+  "category": "bitters",
+  "specialty": true
+ },
+ {
+  "id": "orange-bitters",
+  "name": "Orange bitters",
+  "category": "bitters"
+ },
+ {
+  "id": "simple-syrup",
+  "name": "Simple syrup",
+  "category": "syrup",
+  "family": "sugar",
+  "substitutes": [
+   "demerara-syrup"
+  ],
+  "shelfLifeDays": 30,
+  "staple": true,
+  "aliases": [
+   "sugar syrup"
+  ]
+ },
+ {
+  "id": "demerara-syrup",
+  "name": "Demerara syrup",
+  "category": "syrup",
+  "family": "sugar",
+  "substitutes": [
+   "simple-syrup"
+  ],
+  "shelfLifeDays": 30
+ },
+ {
+  "id": "honey-syrup",
+  "name": "Honey syrup",
+  "category": "syrup",
+  "family": "sugar",
+  "shelfLifeDays": 60
+ },
+ {
+  "id": "agave-syrup",
+  "name": "Agave syrup",
+  "category": "syrup",
+  "family": "sugar",
+  "substitutes": [
+   "simple-syrup"
+  ]
+ },
+ {
+  "id": "orgeat",
+  "name": "Orgeat",
+  "category": "syrup",
+  "shelfLifeDays": 60,
+  "specialty": true,
+  "aliases": [
+   "almond syrup"
+  ]
+ },
+ {
+  "id": "grenadine",
+  "name": "Grenadine",
+  "category": "syrup",
+  "shelfLifeDays": 90
+ },
+ {
+  "id": "raspberry-syrup",
+  "name": "Raspberry syrup",
+  "category": "syrup",
+  "shelfLifeDays": 14
+ },
+ {
+  "id": "lime-juice",
+  "name": "Lime juice",
+  "category": "juice",
+  "family": "citrus",
+  "shelfLifeDays": 2,
+  "staple": true,
+  "aliases": [
+   "lime"
+  ]
+ },
+ {
+  "id": "lemon-juice",
+  "name": "Lemon juice",
+  "category": "juice",
+  "family": "citrus",
+  "shelfLifeDays": 2,
+  "staple": true,
+  "aliases": [
+   "lemon"
+  ]
+ },
+ {
+  "id": "pineapple-juice",
+  "name": "Pineapple juice",
+  "category": "juice",
+  "shelfLifeDays": 5
+ },
+ {
+  "id": "espresso",
+  "name": "Espresso",
+  "category": "fresh",
+  "shelfLifeDays": 1,
+  "staple": true,
+  "aliases": [
+   "coffee"
+  ]
+ },
+ {
+  "id": "egg-white",
+  "name": "Egg white",
+  "category": "fresh",
+  "shelfLifeDays": 3,
+  "staple": true,
+  "aliases": [
+   "aquafaba"
+  ]
+ },
+ {
+  "id": "orange-peel",
+  "name": "Orange peel",
+  "category": "fresh",
+  "staple": true
+ },
+ {
+  "id": "lemon-peel",
+  "name": "Lemon peel",
+  "category": "fresh",
+  "staple": true
+ },
+ {
+  "id": "cocktail-cherry",
+  "name": "Cocktail cherry",
+  "category": "pantry",
+  "aliases": [
+   "maraschino cherry",
+   "luxardo cherry"
+  ]
+ },
+ {
+  "id": "mint",
+  "name": "Mint",
+  "category": "fresh",
+  "shelfLifeDays": 5,
+  "staple": true
+ },
+ {
+  "id": "salt",
+  "name": "Salt",
+  "category": "pantry",
+  "staple": true
+ },
+ {
+  "id": "soda-water",
+  "name": "Soda water",
+  "category": "mixer",
+  "staple": true,
+  "aliases": [
+   "club soda",
+   "sparkling water"
+  ]
+ }
+]

@@ -1,0 +1,44 @@
+{
+ "id": "amaretto-sour",
+ "name": "Amaretto Sour",
+ "method": "dry-shake",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "amaretto",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "bourbon",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 7.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "egg-white",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake everything without ice to whip the egg white, then again with ice.",
+  "Strain over fresh ice."
+ ],
+ "tags": [
+  "sour",
+  "egg-white",
+  "sweet",
+  "modern-classic"
+ ],
+ "origin": "Portland, 2012"
+}

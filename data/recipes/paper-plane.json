@@ -1,0 +1,37 @@
+{
+ "id": "paper-plane",
+ "name": "Paper Plane",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "bourbon",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "aperol",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "amaro-nonino",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "bitter",
+  "sour",
+  "modern-classic"
+ ],
+ "origin": "New York, 2007"
+}

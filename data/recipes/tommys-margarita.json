@@ -1,0 +1,32 @@
+{
+ "id": "tommys-margarita",
+ "name": "Tommy's Margarita",
+ "method": "shake",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "tequila-blanco",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "agave-syrup",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain over fresh ice."
+ ],
+ "tags": [
+  "sour",
+  "citrus",
+  "modern-classic"
+ ],
+ "origin": "San Francisco, 1990s"
+}
