@@ -1,0 +1,43 @@
+{
+ "id": "midori-sour",
+ "name": "Midori Sour",
+ "method": "shake",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "midori",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "vodka",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "soda-water",
+   "amount": 1,
+   "unit": "top"
+  }
+ ],
+ "steps": [
+  "Shake the Midori, vodka and citrus with ice.",
+  "Strain into a highball over fresh ice and top with soda."
+ ],
+ "tags": [
+  "sour",
+  "sweet",
+  "fruity"
+ ],
+ "origin": "New York, 1978"
+}

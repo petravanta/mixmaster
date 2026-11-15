@@ -1,0 +1,32 @@
+{
+ "id": "tequila-sunrise",
+ "name": "Tequila Sunrise",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "tequila-blanco",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-juice",
+   "amount": 90,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "grenadine",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice and add the tequila and orange juice.",
+  "Pour the grenadine down the side so it sinks, and don't stir."
+ ],
+ "tags": [
+  "sweet",
+  "fruity"
+ ],
+ "origin": "Sausalito, 1970s"
+}

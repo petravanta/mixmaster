@@ -7,6 +7,8 @@
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
   const DAY = 86400000;
+  // Lowercase without accents, so "benedictine" finds Bénédictine and "creme" finds crème
+  const fold = t => String(t == null ? '' : t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
   // How much a missing ingredient of each kind counts against a recipe, and how much it weighs in coverage.
   // Spirits make the drink; a lime is a five-minute errand.
@@ -36,7 +38,7 @@
     ingredients.forEach(i => { if (i.family) { if (!family.has(i.family)) family.set(i.family, []); family.get(i.family).push(i.id); } });
     const uses = new Map(ingredients.map(i => [i.id, 0]));
     recipes.forEach(r => new Set(r.ingredients.filter(l => !l.garnish).map(l => l.ingredient)).forEach(id => uses.set(id, (uses.get(id) || 0) + 1)));
-    const words = new Map(ingredients.map(i => [i.id, [i.name, ...(i.aliases || []), i.family || ''].join(' ').toLowerCase()]));
+    const words = new Map(ingredients.map(i => [i.id, fold([i.name, ...(i.aliases || []), i.family || ''].join(' '))]));
     return { ing, family, uses, words, recipes, byId: new Map(recipes.map(r => [r.id, r])) };
   }
 
@@ -145,11 +147,11 @@
   /* Text search over names, tags, origin and ingredients (names, aliases and families). Every word has to match
      something; matches in the name count most. Returns Map(recipe id → text score); an empty query returns null. */
   function search(cat, query) {
-    const words = String(query || '').toLowerCase().split(/[\s,]+/).filter(Boolean);
+    const words = fold(query).split(/[\s,]+/).filter(Boolean);
     if (!words.length) return null;
     const out = new Map();
     for (const r of cat.recipes) {
-      const name = r.name.toLowerCase(), tags = r.tags.join(' '), origin = (r.origin || '').toLowerCase();
+      const name = fold(r.name), tags = r.tags.join(' ').replace(/-/g, ' '), origin = fold(r.origin);
       const ings = r.ingredients.map(l => cat.words.get(l.ingredient) || l.ingredient);
       let s = 0, ok = true;
       for (const w of words) {
@@ -214,5 +216,5 @@
     return out;
   }
 
-  return { catalog, urgency, stock, rank, search, unlocks, reasons, pour, WEIGHT, CREDIT };
+  return { fold, catalog, urgency, stock, rank, search, unlocks, reasons, pour, WEIGHT, CREDIT };
 });

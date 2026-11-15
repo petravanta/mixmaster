@@ -29,7 +29,7 @@
    }
   },
   "steps": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "description": "How to make it, one short sentence or two per step." },
-  "tags": { "type": "array", "uniqueItems": true, "items": { "enum": ["bitter", "sour", "spirit-forward", "herbal", "citrus", "tiki", "sparkling", "smoky", "coffee", "sweet", "egg-white", "low-abv", "aperitif", "after-dinner", "classic", "modern-classic"] }, "description": "Style tags people can filter by. A new tag means adding it here too." },
+  "tags": { "type": "array", "uniqueItems": true, "items": { "enum": ["bitter", "sour", "spirit-forward", "herbal", "citrus", "tiki", "sparkling", "smoky", "coffee", "sweet", "fruity", "creamy", "egg-white", "low-abv", "aperitif", "after-dinner", "classic", "modern-classic"] }, "description": "Style tags people can filter by. A new tag means adding it here too." },
   "origin": { "type": "string", "description": "Where and when it comes from, if known (\"Florence, around 1919\")." },
   "why": { "type": "string", "description": "Optional: what makes the drink work, or a tip that isn't obvious from the steps." },
   "contributor": { "type": "string", "description": "Optional: the GitHub name of whoever added it, to credit them in the app." }

@@ -1,0 +1,33 @@
+{
+ "id": "grasshopper",
+ "name": "Grasshopper",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "creme-de-menthe",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "creme-de-cacao",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cream",
+   "amount": 30,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "creamy",
+  "sweet",
+  "after-dinner",
+  "classic"
+ ],
+ "origin": "New Orleans, 1910s"
+}

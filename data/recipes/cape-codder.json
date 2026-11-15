@@ -1,0 +1,33 @@
+{
+ "id": "cape-codder",
+ "name": "Cape Codder",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cranberry-juice",
+   "amount": 120,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 7.5,
+   "unit": "ml",
+   "optional": true
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice.",
+  "Add the vodka and cranberry, stir and squeeze in a lime wedge."
+ ],
+ "tags": [
+  "fruity",
+  "low-abv"
+ ],
+ "origin": "Massachusetts, 1940s"
+}

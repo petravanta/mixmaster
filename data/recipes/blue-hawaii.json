@@ -1,0 +1,48 @@
+{
+ "id": "blue-hawaii",
+ "name": "Blue Hawaii",
+ "method": "shake",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "white-rum",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "vodka",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "blue-curacao",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "pineapple-juice",
+   "amount": 90,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake everything with ice.",
+  "Strain into a highball over fresh ice."
+ ],
+ "tags": [
+  "tiki",
+  "sweet",
+  "fruity"
+ ],
+ "origin": "Honolulu, 1957"
+}

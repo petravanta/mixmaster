@@ -1,0 +1,28 @@
+{
+ "id": "fuzzy-navel",
+ "name": "Fuzzy Navel",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "peach-schnapps",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-juice",
+   "amount": 120,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice.",
+  "Add the schnapps, top with orange juice and stir."
+ ],
+ "tags": [
+  "sweet",
+  "fruity",
+  "low-abv"
+ ],
+ "origin": "1980s"
+}

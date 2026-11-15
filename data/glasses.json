@@ -22,5 +22,9 @@
  {
   "id": "wine",
   "name": "Wine glass"
+ },
+ {
+  "id": "shot",
+  "name": "Shot glass"
  }
 ]
