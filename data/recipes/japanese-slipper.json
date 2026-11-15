@@ -1,0 +1,33 @@
+{
+ "id": "japanese-slipper",
+ "name": "Japanese Slipper",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "midori",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cointreau",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 30,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "sour",
+  "sweet",
+  "fruity",
+  "modern-classic"
+ ],
+ "origin": "Melbourne, 1984"
+}

@@ -1,0 +1,49 @@
+{
+ "id": "chicago-fizz",
+ "name": "Chicago Fizz",
+ "method": "dry-shake",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "ruby-port",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "aged-rum",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "egg-white",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "soda-water",
+   "amount": 1,
+   "unit": "top"
+  }
+ ],
+ "steps": [
+  "Shake everything but the soda without ice, then again with ice.",
+  "Strain into a chilled highball without ice and top with soda."
+ ],
+ "tags": [
+  "sour",
+  "egg-white",
+  "sparkling",
+  "classic"
+ ],
+ "origin": "1900s"
+}

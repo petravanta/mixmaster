@@ -1,0 +1,28 @@
+{
+ "id": "b-and-b",
+ "name": "B&B",
+ "method": "stir",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "cognac",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "benedictine",
+   "amount": 30,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain over a large ice cube, or serve neat."
+ ],
+ "tags": [
+  "herbal",
+  "after-dinner",
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "New York, 1930s"
+}

@@ -1,0 +1,57 @@
+{
+ "id": "long-island-iced-tea",
+ "name": "Long Island Iced Tea",
+ "method": "shake",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "white-rum",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "tequila-blanco",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cointreau",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cola",
+   "amount": 1,
+   "unit": "top"
+  }
+ ],
+ "steps": [
+  "Shake everything but the cola with ice.",
+  "Strain into a highball over fresh ice and top with a splash of cola."
+ ],
+ "tags": [
+  "sour",
+  "sweet"
+ ],
+ "origin": "Long Island, 1970s"
+}

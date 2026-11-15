@@ -1,0 +1,40 @@
+{
+ "id": "limoncello-spritz",
+ "name": "Limoncello Spritz",
+ "method": "build",
+ "glass": "wine",
+ "ingredients": [
+  {
+   "ingredient": "limoncello",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "prosecco",
+   "amount": 90,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "soda-water",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "mint",
+   "amount": 1,
+   "unit": "sprig",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Fill a wine glass with ice and add the limoncello, then the prosecco, then the soda.",
+  "Stir gently and add the mint."
+ ],
+ "tags": [
+  "citrus",
+  "sparkling",
+  "low-abv",
+  "aperitif"
+ ],
+ "origin": "Amalfi Coast"
+}

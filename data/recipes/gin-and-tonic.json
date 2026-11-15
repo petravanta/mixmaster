@@ -1,0 +1,34 @@
+{
+ "id": "gin-and-tonic",
+ "name": "Gin and Tonic",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 50,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "tonic-water",
+   "amount": 1,
+   "unit": "top"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 7.5,
+   "unit": "ml",
+   "optional": true
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice and add the gin.",
+  "Top with cold tonic, stir once and squeeze in a lime wedge."
+ ],
+ "tags": [
+  "sparkling",
+  "citrus",
+  "classic"
+ ],
+ "origin": "British India, 1800s"
+}
