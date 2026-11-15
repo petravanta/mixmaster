@@ -1,0 +1,49 @@
+{
+ "id": "mai-tai",
+ "name": "Mai Tai",
+ "method": "shake",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "aged-rum",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-curacao",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orgeat",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 7.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "mint",
+   "amount": 1,
+   "unit": "sprig",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Shake with crushed ice and pour everything into the glass.",
+  "Top with more crushed ice and a mint sprig."
+ ],
+ "tags": [
+  "tiki",
+  "sour",
+  "classic"
+ ],
+ "origin": "Oakland, 1944"
+}

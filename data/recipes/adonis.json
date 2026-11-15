@@ -1,0 +1,39 @@
+{
+ "id": "adonis",
+ "name": "Adonis",
+ "method": "stir",
+ "glass": "nick-and-nora",
+ "ingredients": [
+  {
+   "ingredient": "fino-sherry",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sweet-vermouth",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-bitters",
+   "amount": 2,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "orange-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled glass.",
+  "Express the orange peel over the top."
+ ],
+ "tags": [
+  "low-abv",
+  "aperitif",
+  "classic"
+ ],
+ "origin": "New York, 1884"
+}

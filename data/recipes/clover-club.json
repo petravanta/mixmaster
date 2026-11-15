@@ -1,0 +1,38 @@
+{
+ "id": "clover-club",
+ "name": "Clover Club",
+ "method": "dry-shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-juice",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "raspberry-syrup",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "egg-white",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake everything without ice to whip the egg white, then again with ice.",
+  "Fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "sour",
+  "egg-white",
+  "classic"
+ ],
+ "origin": "Philadelphia, 1900s"
+}

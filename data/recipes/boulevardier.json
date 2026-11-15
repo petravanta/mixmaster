@@ -1,0 +1,39 @@
+{
+ "id": "boulevardier",
+ "name": "Boulevardier",
+ "method": "stir",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "bourbon",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "campari",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sweet-vermouth",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain over a large ice cube.",
+  "Garnish with the orange peel."
+ ],
+ "tags": [
+  "bitter",
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "Paris, 1920s"
+}

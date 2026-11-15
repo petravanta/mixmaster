@@ -1,0 +1,32 @@
+{
+ "id": "daiquiri",
+ "name": "Daiquiri",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "white-rum",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 22.5,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe."
+ ],
+ "tags": [
+  "sour",
+  "citrus",
+  "classic"
+ ],
+ "origin": "Cuba, around 1900"
+}

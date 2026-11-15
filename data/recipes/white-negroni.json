@@ -1,0 +1,39 @@
+{
+ "id": "white-negroni",
+ "name": "White Negroni",
+ "method": "stir",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lillet-blanc",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "suze",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain over a large ice cube.",
+  "Express the lemon peel over the top."
+ ],
+ "tags": [
+  "bitter",
+  "spirit-forward",
+  "modern-classic"
+ ],
+ "origin": "Bordeaux, 2001"
+}

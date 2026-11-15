@@ -1,0 +1,44 @@
+{
+ "id": "bijou",
+ "name": "Bijou",
+ "method": "stir",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "london-dry-gin",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sweet-vermouth",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "green-chartreuse",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-bitters",
+   "amount": 1,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled coupe.",
+  "Express the lemon peel over the top."
+ ],
+ "tags": [
+  "herbal",
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "1890s"
+}

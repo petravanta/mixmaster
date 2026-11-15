@@ -1,0 +1,38 @@
+{
+ "id": "espresso-martini",
+ "name": "Espresso Martini",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "coffee-liqueur",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "espresso",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "simple-syrup",
+   "amount": 7.5,
+   "unit": "ml",
+   "optional": true
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain very hard into a chilled coupe, so it foams."
+ ],
+ "tags": [
+  "coffee",
+  "modern-classic",
+  "after-dinner"
+ ],
+ "origin": "London, 1980s"
+}
