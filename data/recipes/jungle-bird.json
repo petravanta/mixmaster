@@ -1,0 +1,42 @@
+{
+ "id": "jungle-bird",
+ "name": "Jungle Bird",
+ "method": "shake",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "blackstrap-rum",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "campari",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "pineapple-juice",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "demerara-syrup",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain over fresh ice."
+ ],
+ "tags": [
+  "tiki",
+  "bitter",
+  "modern-classic"
+ ],
+ "origin": "Kuala Lumpur, 1978"
+}

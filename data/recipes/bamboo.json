@@ -1,0 +1,44 @@
+{
+ "id": "bamboo",
+ "name": "Bamboo",
+ "method": "stir",
+ "glass": "nick-and-nora",
+ "ingredients": [
+  {
+   "ingredient": "fino-sherry",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "dry-vermouth",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "angostura",
+   "amount": 1,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "orange-bitters",
+   "amount": 1,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled glass.",
+  "Express the lemon peel over the top."
+ ],
+ "tags": [
+  "low-abv",
+  "aperitif",
+  "classic"
+ ],
+ "origin": "Yokohama, 1890s"
+}

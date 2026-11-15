@@ -1,0 +1,49 @@
+{
+ "id": "sazerac",
+ "name": "Sazerac",
+ "method": "stir",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "absinthe",
+   "amount": 1,
+   "unit": "rinse"
+  },
+  {
+   "ingredient": "rye-whiskey",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "demerara-syrup",
+   "amount": 7.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "peychauds",
+   "amount": 3,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "angostura",
+   "amount": 1,
+   "unit": "dash"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Rinse a chilled rocks glass with the absinthe and tip out the rest.",
+  "Stir with ice until well chilled, about 30 seconds, and strain into the glass, no ice.",
+  "Express the lemon peel over the top and discard it."
+ ],
+ "tags": [
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "New Orleans, 1850s"
+}

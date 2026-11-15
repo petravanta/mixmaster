@@ -1,0 +1,43 @@
+{
+ "id": "el-presidente",
+ "name": "El Presidente",
+ "method": "stir",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "white-rum",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "blanc-vermouth",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-curacao",
+   "amount": 7.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "grenadine",
+   "amount": 1,
+   "unit": "barspoon"
+  },
+  {
+   "ingredient": "orange-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Stir with ice until well chilled, about 30 seconds, and strain into a chilled coupe.",
+  "Express the orange peel over the top."
+ ],
+ "tags": [
+  "spirit-forward",
+  "classic"
+ ],
+ "origin": "Havana, 1920s"
+}
