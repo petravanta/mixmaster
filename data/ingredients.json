@@ -650,6 +650,26 @@
   ]
  },
  {
+  "id": "pickle-juice",
+  "name": "Pickle juice",
+  "category": "pantry",
+  "shelfLifeDays": 60,
+  "aliases": [
+   "pickle brine",
+   "dill pickle juice"
+  ]
+ },
+ {
+  "id": "pickle",
+  "name": "Pickle",
+  "category": "pantry",
+  "aliases": [
+   "pickles",
+   "cornichon",
+   "gherkin"
+  ]
+ },
+ {
   "id": "mint",
   "name": "Mint",
   "category": "fresh",
