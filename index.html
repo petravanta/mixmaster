@@ -121,6 +121,15 @@ textarea{resize:vertical}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--have:#6fd39a;--sub:#f2c14e;--miss:#ff8a80}}
 :root[data-theme="dark"]{--have:#6fd39a;--sub:#f2c14e;--miss:#ff8a80}
 
+/* Header: one brand row (hub link, name, theme switch, settings) and one row of tabs with the save state at the end,
+   so it stays two rows on a phone instead of wrapping into three */
+.topbar{flex-wrap:nowrap;gap:12px}
+.brand{min-width:0;white-space:nowrap}
+.top-end{margin-left:auto;display:flex;align-items:center;gap:8px;flex:none}
+nav.tabs{align-items:center}
+nav.tabs .save-state{margin-left:auto;padding-left:12px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
+@media (max-width:420px){.topbar{gap:8px}.brand{font-size:16px;gap:6px}.brand svg{width:22px;height:22px}nav.tabs button{padding-inline:9px}}
+@media (max-width:359px){.brand .word{display:none}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .icon-btn{background:none;border:1px solid var(--line);border-radius:999px;width:34px;height:34px;display:inline-grid;place-items:center;color:var(--muted)}
 .icon-btn svg{width:18px;height:18px}
@@ -154,6 +163,10 @@ button.card:hover{border-color:var(--muted)}
 .lines .amt{font-family:var(--f-mono);font-size:13px;text-align:right;color:var(--muted)}
 .lines .st{font-size:12px;color:var(--muted)}
 .lines .st.have{color:var(--have)} .lines .st.close,.lines .st.loose{color:var(--sub)} .lines .st.missing{color:var(--miss)}
+.drawer.still{animation:none}
+.have-btn{border:1px dashed var(--line);background:none;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:600;color:var(--muted);margin-left:4px;white-space:nowrap}
+.have-btn:hover{border-color:var(--accent);color:var(--accent)}
+.have-btn[data-armed]{border-style:solid;border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
 .steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
 .bottle{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
 .bottle:first-of-type{border-top:0}
@@ -186,15 +199,15 @@ a{color:var(--accent)}
       <a data-hub-link href="https://petravanta.github.io/general/">All apps</a>
       <div class="brand">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6h24L18 17.5V25h5v2.5H9V25h5v-7.5z" fill="var(--accent)"/><circle cx="22.5" cy="9.5" r="2.6" fill="var(--bg)"/></svg>
-        Mixmaster
+        <span class="word">Mixmaster</span>
       </div>
-      <span class="save-state" id="saveState">Saved in this browser</span>
-      <button class="icon-btn" type="button" id="settingsBtn" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></button>
+      <span class="top-end"><span data-theme-switch></span><button class="icon-btn" type="button" id="settingsBtn" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></button></span>
     </div>
     <nav class="tabs" id="tabs" aria-label="Sections">
       <button type="button" data-tab="tonight">Tonight</button>
       <button type="button" data-tab="recipes">Recipes</button>
       <button type="button" data-tab="bar">My bar</button>
+      <span class="save-state" id="saveState" role="status">Saved in this browser</span>
     </nav>
   </div>
 </header>
@@ -379,16 +392,33 @@ function wireRecipes() {
 }
 
 /* ---------- Recipe drawer ---------- */
-function recipeDrawer(id) {
+function recipeDrawer(id, still) {
   const a = ranked().find(x => x.recipe.id === id); if (!a) return;
   const r = a.recipe, fav = favs().has(id), last = lastMade().get(id);
   openDrawer(r.name, `
     <div class="row">${a.makeable ? `<span class="badge ok">${a.stretch ? 'At a stretch' : 'You can make this'}</span>` : `<span class="badge">Missing ${a.missing.map(x => esc(ingName(x))).join(', ')}</span>`}<span class="small muted">${esc(r.method.replace('-', ' '))} · ${esc(C.glasses.get(r.glass) || r.glass)}${r.origin ? ' · ' + esc(r.origin) : ''}</span></div>
     ${Mix.reasons(C, a).length ? `<ul class="why small muted" style="margin:0;padding-left:18px">${Mix.reasons(C, a).map(w => `<li>${esc(w)}</li>`).join('')}</ul>` : ''}
-    <section class="stack"><h3>Ingredients</h3><ul class="lines">${a.lines.map(l => `<li><span class="amt">${esc(amount(l.line))}</span><span>${esc(ingName(l.line.ingredient))}${l.line.optional ? ' <span class="muted small">(optional)</span>' : ''}${l.line.garnish ? ' <span class="muted small">(garnish)</span>' : ''}${l.line.note ? ` <span class="muted small">${esc(l.line.note)}</span>` : ''} <span class="st ${l.status}">· ${esc(statusText(l))}</span></span></li>`).join('')}</ul></section>
+    <section class="stack"><h3>Ingredients</h3><ul class="lines">${a.lines.map(l => `<li><span class="amt">${esc(amount(l.line))}</span><span>${esc(ingName(l.line.ingredient))}${l.line.optional ? ' <span class="muted small">(optional)</span>' : ''}${l.line.garnish ? ' <span class="muted small">(garnish)</span>' : ''}${l.line.note ? ` <span class="muted small">${esc(l.line.note)}</span>` : ''} <span class="st ${l.status}">· ${esc(statusText(l))}</span>${l.status !== 'have' && !a.lines.some(x => x !== l && x.line.ingredient === l.line.ingredient && x.status === 'have') ? ` <button class="have-btn" type="button" data-have="${esc(l.line.ingredient)}" aria-label="I have ${esc(ingName(l.line.ingredient))}: add it to my bar">+ I have it</button>` : ''}</span></li>`).join('')}</ul>
+      <p class="small muted">Own a bottle that isn’t in your bar yet? Tap <b>+ I have it</b>, then tap again to confirm.</p></section>
     <section class="stack"><h3>Method</h3><ol class="steps">${r.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>${r.why ? `<p class="small muted">${esc(r.why)}</p>` : ''}</section>
     <div class="row"><button class="btn primary" type="button" id="madeBtn">I made this</button><button class="btn" type="button" id="favBtn">${fav ? '★ Favourite' : '☆ Favourite'}</button></div>
     <p class="small muted">${last ? `Last made ${new Date(last).toLocaleDateString()}. ` : ''}${r.contributor ? `Added by ${esc(r.contributor)}. ` : ''}<a href="${REPO}/blob/main/data/recipes/${r.id}.json" target="_blank" rel="noopener">See or improve this recipe on GitHub</a></p>`, d => {
+    // Adding a bottle takes two deliberate taps on the same button, at least 400 ms apart (so a double-tap or a brushed
+    // finger doesn't count), and the toast offers Undo. The armed state lapses after 4 seconds.
+    d.querySelector('.lines').onclick = e => {
+      const btn = e.target.closest('[data-have]'); if (!btn) return;
+      const t = Date.now(), armed = +btn.dataset.armed || 0;
+      if (!armed || t - armed > 4000) {
+        d.querySelectorAll('[data-have][data-armed]').forEach(x => { delete x.dataset.armed; x.textContent = '+ I have it'; });
+        btn.dataset.armed = t; btn.textContent = 'Tap again to add';
+        setTimeout(() => { if (btn.dataset.armed == t) { delete btn.dataset.armed; btn.textContent = '+ I have it'; } }, 4000);
+        return;
+      }
+      if (t - armed < 400) return;
+      const ing = btn.dataset.have, b = touch({ id: uid(), ingredient: ing, level: 1 });
+      doc.bottles.push(b); save(); render(); recipeDrawer(id, true);
+      toast(`${ingName(ing)} added to your bar`, 5000, { label: 'Undo', run: () => { removeRecord('bottles', b.id); render(); if ($('#layer').innerHTML) recipeDrawer(id, true); } });
+    };
     d.querySelector('#madeBtn').onclick = () => {
       doc.made.push(touch({ id: uid(), recipe: id, at: now() })); save(); closeDrawer(); render();
       const used = a.lines.filter(l => l.bottle && l.line.unit === 'ml' && l.line.amount >= 15).map(l => l.bottle);
@@ -397,9 +427,9 @@ function recipeDrawer(id) {
     d.querySelector('#favBtn').onclick = () => {
       const fid = 'fav-' + id, f = doc.favourites.find(x => x.id === fid);
       if (f) { f.on = !f.on; touch(f); } else doc.favourites.push(touch({ id: fid, recipe: id, on: true }));
-      save(); recipeDrawer(id); render();
+      save(); recipeDrawer(id, true); render();
     };
-  });
+  }, still);
 }
 
 /* ---------- My bar ---------- */
@@ -482,8 +512,9 @@ function openBottle(id) {
 }
 
 /* ---------- Drawer, toast, download ---------- */
-function openDrawer(title, inner, wire) {
-  $('#layer').innerHTML = `<div class="scrim" data-close></div><aside class="drawer" role="dialog" aria-modal="true" aria-label="${esc(title)}"><button class="x" type="button" data-close aria-label="Close">×</button><h2>${esc(title)}</h2>${inner}</aside>`;
+function openDrawer(title, inner, wire, still) {
+  // still: redrawing an open drawer in place, so skip the slide-in
+  $('#layer').innerHTML = `<div class="scrim" data-close></div><aside class="drawer${still ? ' still' : ''}" role="dialog" aria-modal="true" aria-label="${esc(title)}"><button class="x" type="button" data-close aria-label="Close">×</button><h2>${esc(title)}</h2>${inner}</aside>`;
   $('#layer').querySelectorAll('[data-close]').forEach(b => b.onclick = closeDrawer);
   if (wire) wire($('#layer .drawer'));
 }
