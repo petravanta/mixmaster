@@ -1,0 +1,27 @@
+{
+ "id": "stinger",
+ "name": "Stinger",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "cognac",
+   "amount": 60,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "creme-de-menthe",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe, or over crushed ice."
+ ],
+ "tags": [
+  "spirit-forward",
+  "after-dinner",
+  "classic"
+ ],
+ "origin": "New York, 1890s"
+}

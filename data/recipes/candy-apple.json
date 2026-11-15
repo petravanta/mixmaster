@@ -1,0 +1,30 @@
+{
+ "id": "candy-apple",
+ "name": "Candy Apple",
+ "method": "shake",
+ "glass": "shot",
+ "ingredients": [
+  {
+   "ingredient": "fireball",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "sour-apple-schnapps",
+   "amount": 22.5,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cranberry-juice",
+   "amount": 15,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake with ice and strain into a shot glass."
+ ],
+ "tags": [
+  "sweet",
+  "fruity"
+ ]
+}

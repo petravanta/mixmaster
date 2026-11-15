@@ -1,0 +1,34 @@
+{
+ "id": "brandy-alexander",
+ "name": "Brandy Alexander",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "cognac",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "creme-de-cacao",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cream",
+   "amount": 30,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe.",
+  "Grate a little nutmeg over the top if you have it."
+ ],
+ "tags": [
+  "creamy",
+  "sweet",
+  "after-dinner",
+  "classic"
+ ],
+ "origin": "1920s"
+}

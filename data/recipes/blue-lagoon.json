@@ -1,0 +1,39 @@
+{
+ "id": "blue-lagoon",
+ "name": "Blue Lagoon",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "blue-curacao",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lemon-lime-soda",
+   "amount": 1,
+   "unit": "top"
+  },
+  {
+   "ingredient": "lemon-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice and add the vodka and blue curaçao.",
+  "Top with lemon-lime soda and stir once."
+ ],
+ "tags": [
+  "sweet",
+  "sparkling",
+  "fruity"
+ ],
+ "origin": "Paris, 1960s"
+}

@@ -1,0 +1,44 @@
+{
+ "id": "cosmopolitan",
+ "name": "Cosmopolitan",
+ "method": "shake",
+ "glass": "coupe",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 45,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cointreau",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "cranberry-juice",
+   "amount": 30,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 15,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "orange-peel",
+   "amount": 1,
+   "unit": "piece",
+   "garnish": true
+  }
+ ],
+ "steps": [
+  "Shake hard with ice for 10 to 12 seconds and fine-strain into a chilled coupe.",
+  "Flame or express the orange peel over the top."
+ ],
+ "tags": [
+  "sour",
+  "fruity",
+  "modern-classic"
+ ],
+ "origin": "New York, 1980s"
+}

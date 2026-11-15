@@ -1,0 +1,32 @@
+{
+ "id": "whiskey-ginger",
+ "name": "Whiskey Ginger",
+ "method": "build",
+ "glass": "highball",
+ "ingredients": [
+  {
+   "ingredient": "irish-whiskey",
+   "amount": 50,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "ginger-ale",
+   "amount": 1,
+   "unit": "top"
+  },
+  {
+   "ingredient": "lime-juice",
+   "amount": 7.5,
+   "unit": "ml",
+   "optional": true
+  }
+ ],
+ "steps": [
+  "Fill the glass with ice and add the whiskey.",
+  "Top with ginger ale and squeeze in a lime wedge if you like."
+ ],
+ "tags": [
+  "sparkling",
+  "low-abv"
+ ]
+}

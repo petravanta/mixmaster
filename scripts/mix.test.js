@@ -91,3 +91,16 @@ test('unlocks names the one bottle that opens the most drinks', () => {
   assert.equal(u[0].ingredient, 'campari');
   assert.ok(u[0].recipes.includes('negroni'));
 });
+
+test('search ignores accents and finds the new bottles by their everyday names', () => {
+  const ids = q => [...Mix.search(cat, q).keys()];
+  assert.ok(ids('benedictine').includes('b-and-b'));
+  assert.ok(ids('creme de menthe').includes('grasshopper'));
+  assert.ok(ids('sprite').includes('blue-lagoon'));
+  assert.ok(ids('port').includes('port-sangaree'));
+});
+
+test('a lonely schnapps finds its drinks', () => {
+  const list = top(bar('vodka', 'peach-schnapps', 'orange-juice', 'cranberry-juice'));
+  assert.ok(['sex-on-the-beach', 'woo-woo', 'fuzzy-navel'].includes(list[0].recipe.id));
+});

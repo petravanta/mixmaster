@@ -120,6 +120,18 @@
   ]
  },
  {
+  "id": "fireball",
+  "name": "Fireball",
+  "category": "liqueur",
+  "family": "cinnamon",
+  "substitutes": [
+   "cinnamon-schnapps"
+  ],
+  "aliases": [
+   "cinnamon whisky"
+  ]
+ },
+ {
   "id": "campari",
   "name": "Campari",
   "category": "liqueur",
@@ -189,6 +201,15 @@
   ]
  },
  {
+  "id": "blue-curacao",
+  "name": "Blue curaçao",
+  "category": "liqueur",
+  "family": "orange-liqueur",
+  "aliases": [
+   "blue curacao"
+  ]
+ },
+ {
   "id": "benedictine",
   "name": "Bénédictine",
   "category": "liqueur",
@@ -254,6 +275,70 @@
   ]
  },
  {
+  "id": "midori",
+  "name": "Midori",
+  "category": "liqueur",
+  "specialty": true,
+  "aliases": [
+   "melon liqueur"
+  ]
+ },
+ {
+  "id": "creme-de-menthe",
+  "name": "Crème de menthe",
+  "category": "liqueur",
+  "specialty": true,
+  "aliases": [
+   "peppermint liqueur"
+  ]
+ },
+ {
+  "id": "creme-de-cacao",
+  "name": "Crème de cacao",
+  "category": "liqueur",
+  "aliases": [
+   "cacao liqueur",
+   "chocolate liqueur"
+  ]
+ },
+ {
+  "id": "limoncello",
+  "name": "Limoncello",
+  "category": "liqueur"
+ },
+ {
+  "id": "cinnamon-schnapps",
+  "name": "Cinnamon schnapps",
+  "category": "liqueur",
+  "family": "cinnamon",
+  "substitutes": [
+   "fireball"
+  ],
+  "specialty": true,
+  "aliases": [
+   "goldschlager",
+   "goldschläger"
+  ]
+ },
+ {
+  "id": "sour-apple-schnapps",
+  "name": "Sour apple schnapps",
+  "category": "liqueur",
+  "specialty": true,
+  "aliases": [
+   "apple pucker",
+   "sour apple"
+  ]
+ },
+ {
+  "id": "peach-schnapps",
+  "name": "Peach schnapps",
+  "category": "liqueur",
+  "aliases": [
+   "peach liqueur"
+  ]
+ },
+ {
   "id": "sweet-vermouth",
   "name": "Sweet vermouth",
   "category": "fortified-wine",
@@ -314,6 +399,16 @@
   "aliases": [
    "fino",
    "manzanilla"
+  ]
+ },
+ {
+  "id": "ruby-port",
+  "name": "Ruby port",
+  "category": "fortified-wine",
+  "family": "port",
+  "shelfLifeDays": 30,
+  "aliases": [
+   "port"
   ]
  },
  {
@@ -450,6 +545,24 @@
   "shelfLifeDays": 5
  },
  {
+  "id": "orange-juice",
+  "name": "Orange juice",
+  "category": "juice",
+  "shelfLifeDays": 7,
+  "aliases": [
+   "oj"
+  ]
+ },
+ {
+  "id": "cranberry-juice",
+  "name": "Cranberry juice",
+  "category": "juice",
+  "shelfLifeDays": 14,
+  "aliases": [
+   "cranberry"
+  ]
+ },
+ {
   "id": "espresso",
   "name": "Espresso",
   "category": "fresh",
@@ -467,6 +580,16 @@
   "staple": true,
   "aliases": [
    "aquafaba"
+  ]
+ },
+ {
+  "id": "cream",
+  "name": "Cream",
+  "category": "fresh",
+  "shelfLifeDays": 7,
+  "aliases": [
+   "heavy cream",
+   "double cream"
   ]
  },
  {
@@ -511,6 +634,38 @@
   "aliases": [
    "club soda",
    "sparkling water"
+  ]
+ },
+ {
+  "id": "tonic-water",
+  "name": "Tonic water",
+  "category": "mixer",
+  "aliases": [
+   "tonic"
+  ]
+ },
+ {
+  "id": "ginger-ale",
+  "name": "Ginger ale",
+  "category": "mixer"
+ },
+ {
+  "id": "cola",
+  "name": "Cola",
+  "category": "mixer",
+  "aliases": [
+   "coke"
+  ]
+ },
+ {
+  "id": "lemon-lime-soda",
+  "name": "Lemon-lime soda",
+  "category": "mixer",
+  "aliases": [
+   "sprite",
+   "7up",
+   "7 up",
+   "lemonade"
   ]
  }
 ]
