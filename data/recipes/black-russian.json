@@ -1,0 +1,28 @@
+{
+ "id": "black-russian",
+ "name": "Black Russian",
+ "method": "build",
+ "glass": "rocks",
+ "ingredients": [
+  {
+   "ingredient": "vodka",
+   "amount": 50,
+   "unit": "ml"
+  },
+  {
+   "ingredient": "coffee-liqueur",
+   "amount": 25,
+   "unit": "ml"
+  }
+ ],
+ "steps": [
+  "Fill a rocks glass with ice, add both and stir."
+ ],
+ "tags": [
+  "coffee",
+  "spirit-forward",
+  "after-dinner",
+  "classic"
+ ],
+ "origin": "Brussels, 1949"
+}

@@ -104,3 +104,12 @@ test('a lonely schnapps finds its drinks', () => {
   const list = top(bar('vodka', 'peach-schnapps', 'orange-juice', 'cranberry-juice'));
   assert.ok(['sex-on-the-beach', 'woo-woo', 'fuzzy-navel'].includes(list[0].recipe.id));
 });
+
+test('coffee and olives are findable and have drinks', () => {
+  const ids = q => [...Mix.search(cat, q).keys()];
+  assert.ok(ids('olive').includes('dirty-martini'));
+  assert.ok(ids('pickle').includes('pickleback'));
+  assert.ok(ids('coffee').includes('irish-coffee'));
+  assert.ok(ids('coffee').includes('espresso-martini'));
+  assert.equal(find(top(bar('vodka', 'coffee-liqueur', 'hot-coffee')), 'espresso-martini').lines[2].status, 'close');
+});
