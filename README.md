@@ -60,7 +60,7 @@ references, the recipe list matching the folder) and the engine tests.
 
 ## User data
 
-One JSON document (`localStorage` key `mixmaster.data`, Drive file `Mixmaster data.json`) in the shape the
+One JSON document (`localStorage` key `mixmaster.data`, Drive file `petravanta/Mixmaster/Mixmaster data.json`) in the shape the
 [shared standards](https://github.com/petravanta/general/blob/main/STANDARDS.md#user-data) describe: `bottles`, `made`
 and `favourites` lists of records with `id` and `u`, a `deleted` list, and `settings` with `updatedAt`. Bottles and
 history refer to catalog entries by id. AGENTS.md has the field-by-field shape.
