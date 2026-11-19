@@ -14,7 +14,7 @@ Follow the shared standards in [petravanta/general STANDARDS.md](https://github.
   one file per recipe in `data/recipes/<id>.json`, with `data/recipes.json` listing the ids in display order. Schemas
   are in `data/schema/` (`recipe.schema.json` covers each recipe file). Run `node scripts/check-data.js` after changing
   data. Ids are never renamed or reused: bars and history refer to them.
-- **User data**: `localStorage` key `mixmaster.data`; Drive file `Mixmaster data.json` (app id `mixmaster`, key prefix
+- **User data**: `localStorage` key `mixmaster.data`; Drive file `petravanta/Mixmaster/Mixmaster data.json` (app id `mixmaster`, key prefix
   `mixmaster.drive`). Version 1, lists `bottles` (`{ id, u, ingredient, label?, openedAt?, level?, mood? }`, `mood` is
   `use-up` or `savour`), `made` (`{ id, u, recipe, at }`) and `favourites` (`{ id: 'fav-<recipe>', u, recipe, on }`);
   settings `units` (`ml` / `oz`) and `assumeStaples`. `upgrade()` is the only way outside data becomes a document;
