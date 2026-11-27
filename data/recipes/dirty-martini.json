@@ -3,6 +3,7 @@
  "name": "Dirty Martini",
  "method": "stir",
  "glass": "nick-and-nora",
+ "color": "#dfe0c0",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

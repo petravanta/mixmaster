@@ -3,6 +3,8 @@
  "name": "Sex on the Beach",
  "method": "build",
  "glass": "highball",
+ "color": "#e8583a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",

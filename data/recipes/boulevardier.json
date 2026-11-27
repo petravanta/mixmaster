@@ -3,6 +3,8 @@
  "name": "Boulevardier",
  "method": "stir",
  "glass": "rocks",
+ "color": "#8e2a1f",
+ "ice": "large",
  "ingredients": [
   {
    "ingredient": "bourbon",

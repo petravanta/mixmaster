@@ -113,3 +113,17 @@ test('coffee and olives are findable and have drinks', () => {
   assert.ok(ids('coffee').includes('espresso-martini'));
   assert.equal(find(top(bar('vodka', 'coffee-liqueur', 'hot-coffee')), 'espresso-martini').lines[2].status, 'close');
 });
+
+test('method hints say why a drink is shaken or stirred', () => {
+  const hint = id => Mix.methodHint(cat, cat.byId.get(id));
+  assert.equal(hint('negroni').label, 'Stirred');
+  assert.match(hint('negroni').why, /clear and silky/);
+  assert.match(hint('daiquiri').why, /Citrus/);
+  assert.match(hint('brandy-alexander').why, /Cream/);
+  assert.match(hint('espresso-martini').why, /coffee/);
+  assert.equal(hint('clover-club').label, 'Dry-shaken');
+  assert.match(hint('french-75').why, /never in the shaker/);
+  assert.match(hint('gin-and-tonic').why, /bubbles/);
+  assert.match(hint('irish-coffee').why, /hot/);
+  for (const r of recipes) assert.ok(Mix.methodHint(cat, r).why, `${r.id} has a hint`);
+});

@@ -3,6 +3,7 @@
  "name": "Widow's Kiss",
  "method": "stir",
  "glass": "coupe",
+ "color": "#c98a2e",
  "ingredients": [
   {
    "ingredient": "calvados",

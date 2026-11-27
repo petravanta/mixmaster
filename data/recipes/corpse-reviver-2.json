@@ -3,6 +3,7 @@
  "name": "Corpse Reviver No. 2",
  "method": "shake",
  "glass": "coupe",
+ "color": "#ece7c8",
  "ingredients": [
   {
    "ingredient": "absinthe",

@@ -3,6 +3,8 @@
  "name": "Woo Woo",
  "method": "build",
  "glass": "highball",
+ "color": "#d8304a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",

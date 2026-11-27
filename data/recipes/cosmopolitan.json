@@ -3,6 +3,7 @@
  "name": "Cosmopolitan",
  "method": "shake",
  "glass": "coupe",
+ "color": "#e8607a",
  "ingredients": [
   {
    "ingredient": "vodka",

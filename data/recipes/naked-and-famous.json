@@ -3,6 +3,7 @@
  "name": "Naked and Famous",
  "method": "shake",
  "glass": "coupe",
+ "color": "#e8a94a",
  "ingredients": [
   {
    "ingredient": "mezcal",

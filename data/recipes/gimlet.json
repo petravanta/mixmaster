@@ -3,6 +3,7 @@
  "name": "Gimlet",
  "method": "shake",
  "glass": "coupe",
+ "color": "#e3ebc9",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

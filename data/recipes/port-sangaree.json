@@ -3,6 +3,8 @@
  "name": "Port Sangaree",
  "method": "stir",
  "glass": "rocks",
+ "color": "#6e1428",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "ruby-port",

@@ -3,6 +3,7 @@
  "name": "Daiquiri",
  "method": "shake",
  "glass": "coupe",
+ "color": "#e9ecd0",
  "ingredients": [
   {
    "ingredient": "white-rum",

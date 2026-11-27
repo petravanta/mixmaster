@@ -3,6 +3,7 @@
  "name": "Candy Apple",
  "method": "shake",
  "glass": "shot",
+ "color": "#c83a3a",
  "ingredients": [
   {
    "ingredient": "fireball",

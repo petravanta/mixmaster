@@ -3,6 +3,8 @@
  "name": "Vieux Carré",
  "method": "stir",
  "glass": "rocks",
+ "color": "#8c3d16",
+ "ice": "large",
  "ingredients": [
   {
    "ingredient": "rye-whiskey",

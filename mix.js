@@ -216,5 +216,38 @@
     return out;
   }
 
-  return { fold, catalog, urgency, stock, rank, search, unlocks, reasons, pour, WEIGHT, CREDIT };
+  /* Shaken or stirred, and why, in one line. Read from the method and what goes in: citrus, juice, cream and egg get
+     shaken for air and texture; drinks with none of those get stirred so they stay clear and silky;
+     long drinks are built in the glass, and bubbles never go in the shaker. */
+  const METHOD = { shake: 'Shaken', 'dry-shake': 'Dry-shaken', stir: 'Stirred', build: 'Built', blend: 'Blended', swizzle: 'Swizzled' };
+  function methodHint(cat, r) {
+    const lines = r.ingredients.filter(l => !l.garnish).map(l => ({ l, i: cat.ing.get(l.ingredient) || {} }));
+    const has = test => lines.some(({ l, i }) => test(i, l));
+    const fizz = has((i, l) => l.unit === 'top' || i.category === 'mixer' || i.family === 'sparkling');
+    const label = METHOD[r.method] || r.method;
+    let why;
+    switch (r.method) {
+      case 'dry-shake': why = 'Egg white foams best shaken without ice first, then a second shake with ice chills it.'; break;
+      case 'shake':
+        if (has(i => i.id === 'cream')) why = 'Cream needs a hard shake to blend in and turn silky.';
+        else if (has(i => i.family === 'coffee')) why = 'A hard shake whips the coffee into a creamy foam on top.';
+        else if (has(i => i.family === 'citrus')) why = 'Citrus needs the air and dilution of a hard shake to taste bright, not flat.';
+        else if (has(i => i.category === 'juice')) why = 'Juice needs a hard shake to blend in and lighten up.';
+        else why = 'By tradition: a hard shake gives it a frosty chill and a little froth.';
+        if (fizz) why += ' Add the bubbles after, never in the shaker.';
+        break;
+      case 'stir': why = 'No juice, cream or egg, so stir to chill it and keep it clear and silky. Shaking would cloud it.'; break;
+      case 'build':
+        if (has(i => i.id === 'hot-coffee')) why = 'Served hot in a warmed glass, so no ice and no shaker.';
+        else if (fizz) why = 'The bubbles do the mixing, and a shaker would knock them flat.';
+        else why = 'Nothing in it needs air or foam, so it goes straight into the glass.';
+        break;
+      case 'blend': why = 'Whizzed with ice for a frozen, slushy texture.'; break;
+      case 'swizzle': why = 'Churned in the glass with crushed ice until the outside frosts.'; break;
+      default: why = '';
+    }
+    return { label, why };
+  }
+
+  return { fold, catalog, urgency, stock, rank, search, unlocks, reasons, methodHint, pour, WEIGHT, CREDIT };
 });

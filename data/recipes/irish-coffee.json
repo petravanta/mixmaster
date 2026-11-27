@@ -3,6 +3,8 @@
  "name": "Irish Coffee",
  "method": "build",
  "glass": "wine",
+ "color": "#2e1a10",
+ "float": "#f3ead8",
  "ingredients": [
   {
    "ingredient": "irish-whiskey",

@@ -3,6 +3,8 @@
  "name": "Fireball and Ginger",
  "method": "build",
  "glass": "highball",
+ "color": "#d9a24a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "fireball",

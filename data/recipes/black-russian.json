@@ -3,6 +3,8 @@
  "name": "Black Russian",
  "method": "build",
  "glass": "rocks",
+ "color": "#241208",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",

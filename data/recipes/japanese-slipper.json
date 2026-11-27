@@ -3,6 +3,7 @@
  "name": "Japanese Slipper",
  "method": "shake",
  "glass": "coupe",
+ "color": "#a8d84a",
  "ingredients": [
   {
    "ingredient": "midori",

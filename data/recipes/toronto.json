@@ -3,6 +3,7 @@
  "name": "Toronto",
  "method": "stir",
  "glass": "coupe",
+ "color": "#8a4a1e",
  "ingredients": [
   {
    "ingredient": "rye-whiskey",

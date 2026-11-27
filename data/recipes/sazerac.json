@@ -3,6 +3,7 @@
  "name": "Sazerac",
  "method": "stir",
  "glass": "rocks",
+ "color": "#a0401c",
  "ingredients": [
   {
    "ingredient": "absinthe",

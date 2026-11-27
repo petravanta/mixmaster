@@ -3,6 +3,9 @@
  "name": "Amaretto Sour",
  "method": "dry-shake",
  "glass": "rocks",
+ "color": "#e8b45e",
+ "float": "#f6efdc",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "amaretto",

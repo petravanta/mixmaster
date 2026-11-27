@@ -3,6 +3,8 @@
  "name": "Tommy's Margarita",
  "method": "shake",
  "glass": "rocks",
+ "color": "#e2e2b0",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "tequila-blanco",

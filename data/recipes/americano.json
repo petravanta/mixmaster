@@ -3,6 +3,8 @@
  "name": "Americano",
  "method": "build",
  "glass": "highball",
+ "color": "#c8402e",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "campari",

@@ -3,6 +3,7 @@
  "name": "Grasshopper",
  "method": "shake",
  "glass": "coupe",
+ "color": "#a8d8a4",
  "ingredients": [
   {
    "ingredient": "creme-de-menthe",

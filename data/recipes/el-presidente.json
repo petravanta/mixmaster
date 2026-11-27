@@ -3,6 +3,7 @@
  "name": "El Presidente",
  "method": "stir",
  "glass": "coupe",
+ "color": "#e07a3a",
  "ingredients": [
   {
    "ingredient": "white-rum",

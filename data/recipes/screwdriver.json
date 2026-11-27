@@ -3,6 +3,8 @@
  "name": "Screwdriver",
  "method": "build",
  "glass": "highball",
+ "color": "#f5a623",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",

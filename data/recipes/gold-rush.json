@@ -3,6 +3,8 @@
  "name": "Gold Rush",
  "method": "shake",
  "glass": "rocks",
+ "color": "#e3b14a",
+ "ice": "large",
  "ingredients": [
   {
    "ingredient": "bourbon",

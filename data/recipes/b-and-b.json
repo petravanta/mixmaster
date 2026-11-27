@@ -3,6 +3,8 @@
  "name": "B&B",
  "method": "stir",
  "glass": "rocks",
+ "color": "#b5702a",
+ "ice": "large",
  "ingredients": [
   {
    "ingredient": "cognac",

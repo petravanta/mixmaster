@@ -3,6 +3,8 @@
  "name": "Fuzzy Navel",
  "method": "build",
  "glass": "highball",
+ "color": "#f5a83a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "peach-schnapps",

@@ -3,6 +3,8 @@
  "name": "Cuba Libre",
  "method": "build",
  "glass": "highball",
+ "color": "#3a1a0e",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "white-rum",

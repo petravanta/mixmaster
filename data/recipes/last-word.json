@@ -3,6 +3,7 @@
  "name": "Last Word",
  "method": "shake",
  "glass": "coupe",
+ "color": "#c9d48a",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

@@ -3,6 +3,8 @@
  "name": "Gin and Tonic",
  "method": "build",
  "glass": "highball",
+ "color": "#eef3ea",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

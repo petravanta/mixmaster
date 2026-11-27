@@ -3,6 +3,8 @@
  "name": "White Russian",
  "method": "build",
  "glass": "rocks",
+ "color": "#c9a57e",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",
