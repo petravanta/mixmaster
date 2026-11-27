@@ -3,6 +3,7 @@
  "name": "Hanky Panky",
  "method": "stir",
  "glass": "coupe",
+ "color": "#6e2a14",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

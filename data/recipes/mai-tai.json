@@ -3,6 +3,8 @@
  "name": "Mai Tai",
  "method": "shake",
  "glass": "rocks",
+ "color": "#c4732a",
+ "ice": "crushed",
  "ingredients": [
   {
    "ingredient": "aged-rum",

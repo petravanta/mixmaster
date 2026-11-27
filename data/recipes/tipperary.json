@@ -3,6 +3,7 @@
  "name": "Tipperary",
  "method": "stir",
  "glass": "coupe",
+ "color": "#9a5a1c",
  "ingredients": [
   {
    "ingredient": "irish-whiskey",

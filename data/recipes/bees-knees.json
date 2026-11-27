@@ -3,6 +3,7 @@
  "name": "Bee's Knees",
  "method": "shake",
  "glass": "coupe",
+ "color": "#efd98a",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

@@ -3,6 +3,7 @@
  "name": "Aviation",
  "method": "shake",
  "glass": "coupe",
+ "color": "#cdc8e6",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

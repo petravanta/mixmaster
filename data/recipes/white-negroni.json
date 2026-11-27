@@ -3,6 +3,8 @@
  "name": "White Negroni",
  "method": "stir",
  "glass": "rocks",
+ "color": "#ece09a",
+ "ice": "large",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

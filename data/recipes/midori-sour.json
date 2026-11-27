@@ -3,6 +3,8 @@
  "name": "Midori Sour",
  "method": "shake",
  "glass": "highball",
+ "color": "#8fd44a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "midori",

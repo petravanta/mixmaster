@@ -3,6 +3,7 @@
  "name": "Bijou",
  "method": "stir",
  "glass": "coupe",
+ "color": "#b5661c",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

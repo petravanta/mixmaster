@@ -3,6 +3,7 @@
  "name": "Stinger",
  "method": "shake",
  "glass": "coupe",
+ "color": "#e9d6a8",
  "ingredients": [
   {
    "ingredient": "cognac",

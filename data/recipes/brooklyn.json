@@ -3,6 +3,7 @@
  "name": "Brooklyn",
  "method": "stir",
  "glass": "coupe",
+ "color": "#b0702e",
  "ingredients": [
   {
    "ingredient": "rye-whiskey",

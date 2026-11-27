@@ -3,6 +3,8 @@
  "name": "Whiskey Ginger",
  "method": "build",
  "glass": "highball",
+ "color": "#d9b062",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "irish-whiskey",

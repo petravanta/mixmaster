@@ -3,6 +3,8 @@
  "name": "Corn 'n' Oil",
  "method": "build",
  "glass": "rocks",
+ "color": "#4a2414",
+ "ice": "crushed",
  "ingredients": [
   {
    "ingredient": "blackstrap-rum",

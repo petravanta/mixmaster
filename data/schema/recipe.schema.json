@@ -12,6 +12,15 @@
   "name": { "type": "string", "minLength": 1, "description": "The drink's name as the app shows it." },
   "method": { "enum": ["shake", "dry-shake", "stir", "build", "blend", "swizzle"], "description": "How it's mixed. dry-shake means shaken without ice first, for egg white." },
   "glass": { "type": "string", "description": "A glass id from data/glasses.json." },
+  "color": {
+   "description": "Optional: the drink's colour in its picture, as #rrggbb. Two colours, bottom first, for a drink that grades from one to the other (Tequila Sunrise). Left out, the picture shows a neutral amber.",
+   "oneOf": [
+    { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+    { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string", "pattern": "^#[0-9a-f]{6}$" } }
+   ]
+  },
+  "float": { "type": "string", "pattern": "^#[0-9a-f]{6}$", "description": "Optional: the colour of a layer on top, such as egg-white foam, floated cream or espresso crema." },
+  "ice": { "enum": ["cubes", "large", "crushed"], "description": "Optional: the ice it's served on: cubes, one large cube, or crushed. Left out means served up, without ice." },
   "ingredients": {
    "type": "array", "minItems": 1,
    "description": "What goes in, in the order you add it.",

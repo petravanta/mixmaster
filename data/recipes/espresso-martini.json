@@ -3,6 +3,8 @@
  "name": "Espresso Martini",
  "method": "shake",
  "glass": "coupe",
+ "color": "#2b1a12",
+ "float": "#c49a6c",
  "ingredients": [
   {
    "ingredient": "vodka",

@@ -3,6 +3,8 @@
  "name": "Limoncello Spritz",
  "method": "build",
  "glass": "wine",
+ "color": "#f2e27a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "limoncello",

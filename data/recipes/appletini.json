@@ -3,6 +3,7 @@
  "name": "Appletini",
  "method": "shake",
  "glass": "coupe",
+ "color": "#b6e04a",
  "ingredients": [
   {
    "ingredient": "vodka",

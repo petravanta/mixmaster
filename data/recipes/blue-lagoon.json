@@ -3,6 +3,8 @@
  "name": "Blue Lagoon",
  "method": "build",
  "glass": "highball",
+ "color": "#2a9ad8",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",

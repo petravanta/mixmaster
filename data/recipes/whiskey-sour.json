@@ -3,6 +3,9 @@
  "name": "Whiskey Sour",
  "method": "dry-shake",
  "glass": "rocks",
+ "color": "#e8c47a",
+ "float": "#f5efdc",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "bourbon",

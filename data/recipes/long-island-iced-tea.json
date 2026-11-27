@@ -3,6 +3,8 @@
  "name": "Long Island Iced Tea",
  "method": "shake",
  "glass": "highball",
+ "color": "#a5602a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",

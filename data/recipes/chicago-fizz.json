@@ -3,6 +3,8 @@
  "name": "Chicago Fizz",
  "method": "dry-shake",
  "glass": "highball",
+ "color": "#b8606a",
+ "float": "#f4e9e6",
  "ingredients": [
   {
    "ingredient": "ruby-port",

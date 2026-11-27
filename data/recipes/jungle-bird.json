@@ -3,6 +3,8 @@
  "name": "Jungle Bird",
  "method": "shake",
  "glass": "rocks",
+ "color": "#d9583a",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "blackstrap-rum",

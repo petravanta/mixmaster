@@ -16,6 +16,8 @@ files in the `data/` folder. If you'd rather not touch files at all, use the
      measured liquids (22.5 ml is ¾ oz, 30 ml is 1 oz), `dash` or `drop` for bitters, `rinse` for coating the glass and
      `top` for filling up. Add `"garnish": true` or `"optional": true` where it fits.
    - `method`, `glass`, `steps`, `tags`: copy from a similar drink. The schema lists the allowed values.
+   - `color`, `float` and `ice` are optional and draw the drink's picture: its colour as `#rrggbb` (or two, bottom
+     first, for a drink that grades), a layer on top (foam, cream), and `cubes`, `large` or `crushed` ice.
    - `origin` and `why` are optional: where it comes from, and what makes it work.
    - `contributor` is optional: your GitHub name, to credit you.
 3. Add the id to `data/recipes.json`, where you want it to appear in the list.

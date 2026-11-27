@@ -138,6 +138,17 @@ nav.tabs .save-state{margin-left:auto;padding-left:12px;min-width:0;overflow:hid
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:8px;text-align:left;width:100%}
 button.card:hover{border-color:var(--muted)}
 .card .name{font-family:var(--f-display);font-weight:500;font-size:16px;letter-spacing:-.01em}
+.card-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center}
+.how{display:block;font-family:var(--f-body);font-weight:400;font-size:12px;color:var(--muted);letter-spacing:0;margin-top:1px}
+.art{flex:none;display:block;overflow:visible}
+.art .glass-fill{fill:currentColor;fill-opacity:.05}
+.art .glass-line{fill:none;stroke:var(--muted);stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round}
+.art .liquid{opacity:.92}
+.art .surface{stroke:#000;stroke-opacity:.18;stroke-width:1}
+.art .ice{fill:#fff;fill-opacity:.35;stroke:#fff;stroke-opacity:.8;stroke-width:.8}
+.art .bubbles{fill:#fff;fill-opacity:.75}
+.hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center}
+.hint{margin:0;font-size:14px;padding:8px 12px;border-left:3px solid var(--accent);background:var(--sunk);border-radius:0 8px 8px 0}
 .card .why{margin:0;padding-left:16px;font-size:13px;color:var(--muted)}
 .card .why li::marker{color:var(--accent)}
 .dots{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;color:var(--muted)}
@@ -153,11 +164,12 @@ button.card:hover{border-color:var(--muted)}
 .search{display:flex;gap:8px;align-items:center}
 .search input{flex:1;border-radius:999px;padding:9px 16px}
 .rows{display:flex;flex-direction:column}
-.rrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:12px 4px;border:0;border-top:1px solid var(--line);background:none;text-align:left;width:100%}
+.rrow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:4px 12px;padding:12px 4px;border:0;border-top:1px solid var(--line);background:none;text-align:left;width:100%}
 .rrow:first-child{border-top:0}
 .rrow:hover .name{color:var(--accent)}
 .rrow .name{font-weight:600}
-.rrow .dots{grid-column:1/-1}
+.rrow .dots{grid-column:2/-1}
+.rrow .art{grid-row:span 2;align-self:start}
 .lines{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .lines li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px;align-items:baseline}
 .lines .amt{font-family:var(--f-mono);font-size:13px;text-align:right;color:var(--muted)}
@@ -333,6 +345,44 @@ function render() {
   else if (tab === 'recipes') { m.innerHTML = recipesView(); wireRecipes(); }
   else { m.innerHTML = barView(); wireBar(); }
 }
+/* ---------- Drink pictures ----------
+   A small drawing of each drink: its glass (from the recipe's glass), its colour (color, or two for a gradient), a layer
+   on top (float: foam, cream, crema), its ice and, for sparkling drinks, bubbles. Pure drawing; nothing here ranks. */
+const GLASS = {
+  // bowl: the part that holds the drink; top: where the drink's surface sits; base: the inside bottom; rest: stem and foot
+  coupe: { bowl: 'M7 14Q7 31 24 31Q41 31 41 14Z', top: 17, base: 31, rest: 'M24 31V48M15 49H33' },
+  'nick-and-nora': { bowl: 'M12 9Q11 31 24 32Q37 31 36 9Z', top: 13, base: 32, rest: 'M24 32V48M16 49H32' },
+  rocks: { bowl: 'M8 20L10.5 50H37.5L40 20Z', top: 25, base: 47, rest: 'M11 47H37' },
+  highball: { bowl: 'M13 4L14 50H34L35 4Z', top: 9, base: 47, rest: 'M14 47H34' },
+  flute: { bowl: 'M18 4Q16.5 30 24 35Q31.5 30 30 4Z', top: 9, base: 35, rest: 'M24 35V48M17 49H31' },
+  wine: { bowl: 'M15 6Q8 20 13 29Q18 35 24 35Q30 35 35 29Q40 20 33 6Z', top: 15, base: 35, rest: 'M24 35V48M15 49H33' },
+  shot: { bowl: 'M15 28L16.5 50H31.5L33 28Z', top: 32, base: 47, rest: 'M16.5 47H31.5' }
+};
+let artN = 0;
+function drinkArt(r, size = 40) {
+  const g = GLASS[r.glass] || GLASS.rocks, n = 'da' + (++artN);
+  const [c1, c2] = Array.isArray(r.color) ? r.color : [r.color || '#d9a560', null];
+  const h = g.base - g.top, fill = c2 ? `url(#${n}g)` : c1;
+  const ice = { cubes: [[15, g.top + 2, 9, -8], [24, g.top + h * 0.35, 9, 10], [16, g.top + h * 0.6, 8, 4]],
+    large: [[17, g.top + 1, 14, 3]],
+    crushed: Array.from({ length: 9 }, (_, k) => [12 + (k % 3) * 8 + (k * 7 % 3), g.top + 1 + Math.floor(k / 3) * (h / 3.4), 5, k * 23])
+  }[r.ice] || [];
+  const bubbles = r.tags.includes('sparkling') ? [[20, 0.8], [28, 0.55], [24, 0.3], [18, 0.4], [30, 0.85]].map(([x, f]) => `<circle cx="${x}" cy="${g.top + h * f}" r="1"/>`).join('') : '';
+  return `<svg class="art" viewBox="0 0 48 52" width="${size}" height="${Math.round(size * 52 / 48)}" aria-hidden="true" focusable="false">
+    <defs><clipPath id="${n}c"><path d="${g.bowl}"/></clipPath>${c2 ? `<linearGradient id="${n}g" x1="0" y1="1" x2="0" y2="0"><stop offset=".1" stop-color="${c1}"/><stop offset=".85" stop-color="${c2}"/></linearGradient>` : ''}</defs>
+    <path d="${g.bowl}" class="glass-fill"/>
+    <g clip-path="url(#${n}c)">
+      <rect x="0" y="${g.top}" width="48" height="${h + 4}" fill="${fill}" class="liquid"/>
+      ${r.float ? `<rect x="0" y="${g.top}" width="48" height="${Math.max(3, h * 0.16)}" fill="${r.float}"/>` : ''}
+      ${ice.map(([x, y, s, a]) => `<rect class="ice" x="${x}" y="${y}" width="${s}" height="${s}" rx="1.5" transform="rotate(${a} ${x + s / 2} ${y + s / 2})"/>`).join('')}
+      <g class="bubbles">${bubbles}</g>
+      <line x1="0" x2="48" y1="${g.top}" y2="${g.top}" class="surface"/>
+    </g>
+    <path d="${g.bowl}${g.rest ? ' ' + g.rest : ''}" class="glass-line"/>
+  </svg>`;
+}
+const ICE = { cubes: 'on ice', large: 'on a large cube', crushed: 'on crushed ice' };
+const methodLine = r => { const m = Mix.methodHint(C, r); return `<span title="${esc(m.why)}">${esc(m.label)}</span> · ${esc(C.glasses.get(r.glass) || r.glass)}`; };
 function dots(a) {
   return `<div class="dots">${a.lines.map(l => `<span class="dot ${l.status}" title="${esc(statusText(l))}">${esc(ingName(l.line.ingredient))}</span>`).join('')}</div>`;
 }
@@ -349,7 +399,7 @@ function statusText(l) {
 function card(a) {
   const why = Mix.reasons(C, a);
   return `<button class="card" type="button" data-recipe="${a.recipe.id}">
-    <div class="row" style="justify-content:space-between"><span class="name">${esc(a.recipe.name)}</span>${a.makeable ? `<span class="badge ok">${a.stretch ? 'At a stretch' : 'Can make'}</span>` : `<span class="badge">${a.missing.length} missing</span>`}</div>
+    <div class="card-head">${drinkArt(a.recipe, 36)}<span class="name">${esc(a.recipe.name)}<span class="how">${methodLine(a.recipe)}</span></span>${a.makeable ? `<span class="badge ok">${a.stretch ? 'At a stretch' : 'Can make'}</span>` : `<span class="badge">${a.missing.length} missing</span>`}</div>
     ${why.length ? `<ul class="why">${why.slice(0, 3).map(w => `<li>${esc(w)}</li>`).join('')}</ul>` : ''}
     ${dots(a)}</button>`;
 }
@@ -384,7 +434,7 @@ function recipeRows() {
   const f = favs();
   const list = ranked(query).filter(a => filter === 'all' || (filter === 'can' && a.makeable) || (filter === 'near' && !a.makeable && a.missing.length === 1) || (filter === 'fav' && f.has(a.recipe.id)) || (filter.startsWith('tag:') && a.recipe.tags.includes(filter.slice(4))));
   if (!list.length) return `<p class="empty">No drinks match${query ? ` “${esc(query)}”` : ''}.</p>`;
-  return list.map(a => `<button class="rrow" type="button" data-recipe="${a.recipe.id}"><span class="name">${f.has(a.recipe.id) ? '★ ' : ''}${esc(a.recipe.name)}</span><span>${a.makeable ? `<span class="badge ok">${a.stretch ? 'Stretch' : 'Can make'}</span>` : a.missing.length === 1 ? '<span class="badge">1 away</span>' : ''}</span>${dots(a)}</button>`).join('');
+  return list.map(a => `<button class="rrow" type="button" data-recipe="${a.recipe.id}">${drinkArt(a.recipe, 36)}<span class="name">${f.has(a.recipe.id) ? '★ ' : ''}${esc(a.recipe.name)}<span class="how">${methodLine(a.recipe)}</span></span><span>${a.makeable ? `<span class="badge ok">${a.stretch ? 'Stretch' : 'Can make'}</span>` : a.missing.length === 1 ? '<span class="badge">1 away</span>' : ''}</span>${dots(a)}</button>`).join('');
 }
 function wireRecipes() {
   const q = $('#q');
@@ -396,12 +446,13 @@ function wireRecipes() {
 function recipeDrawer(id, still) {
   const a = ranked().find(x => x.recipe.id === id); if (!a) return;
   const r = a.recipe, fav = favs().has(id), last = lastMade().get(id);
+  const hint = Mix.methodHint(C, r);
   openDrawer(r.name, `
-    <div class="row">${a.makeable ? `<span class="badge ok">${a.stretch ? 'At a stretch' : 'You can make this'}</span>` : `<span class="badge">Missing ${a.missing.map(x => esc(ingName(x))).join(', ')}</span>`}<span class="small muted">${esc(r.method.replace('-', ' '))} · ${esc(C.glasses.get(r.glass) || r.glass)}${r.origin ? ' · ' + esc(r.origin) : ''}</span></div>
+    <div class="hero">${drinkArt(r, 64)}<div class="stack" style="gap:6px"><div class="row">${a.makeable ? `<span class="badge ok">${a.stretch ? 'At a stretch' : 'You can make this'}</span>` : `<span class="badge">Missing ${a.missing.map(x => esc(ingName(x))).join(', ')}</span>`}</div><span class="small muted">${esc(hint.label)} · ${esc(C.glasses.get(r.glass) || r.glass)}${r.ice ? ' · ' + ICE[r.ice] : ''}${r.origin ? ' · ' + esc(r.origin) : ''}</span></div></div>
     ${Mix.reasons(C, a).length ? `<ul class="why small muted" style="margin:0;padding-left:18px">${Mix.reasons(C, a).map(w => `<li>${esc(w)}</li>`).join('')}</ul>` : ''}
     <section class="stack"><h3>Ingredients</h3><ul class="lines">${a.lines.map(l => `<li><span class="amt">${esc(amount(l.line))}</span><span>${esc(ingName(l.line.ingredient))}${l.line.optional ? ' <span class="muted small">(optional)</span>' : ''}${l.line.garnish ? ' <span class="muted small">(garnish)</span>' : ''}${l.line.note ? ` <span class="muted small">${esc(l.line.note)}</span>` : ''} <span class="st ${l.status}">· ${esc(statusText(l))}</span>${l.status !== 'have' && !a.lines.some(x => x !== l && x.line.ingredient === l.line.ingredient && x.status === 'have') ? ` <button class="have-btn" type="button" data-have="${esc(l.line.ingredient)}" aria-label="I have ${esc(ingName(l.line.ingredient))}: add it to my bar">+ I have it</button>` : ''}</span></li>`).join('')}</ul>
       <p class="small muted">Own a bottle that isn’t in your bar yet? Tap <b>+ I have it</b>, then tap again to confirm.</p></section>
-    <section class="stack"><h3>Method</h3><ol class="steps">${r.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>${r.why ? `<p class="small muted">${esc(r.why)}</p>` : ''}</section>
+    <section class="stack"><h3>Method</h3><p class="hint"><b>${esc(hint.label)}.</b> ${esc(hint.why)}</p><ol class="steps">${r.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>${r.why ? `<p class="small muted">${esc(r.why)}</p>` : ''}</section>
     <div class="row"><button class="btn primary" type="button" id="madeBtn">I made this</button><button class="btn" type="button" id="favBtn">${fav ? '★ Favourite' : '☆ Favourite'}</button></div>
     <p class="small muted">${last ? `Last made ${new Date(last).toLocaleDateString()}. ` : ''}${r.contributor ? `Added by ${esc(r.contributor)}. ` : ''}<a href="${REPO}/blob/main/data/recipes/${r.id}.json" target="_blank" rel="noopener">See or improve this recipe on GitHub</a></p>`, d => {
     // Adding a bottle takes two deliberate taps on the same button, at least 400 ms apart (so a double-tap or a brushed

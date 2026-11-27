@@ -3,6 +3,8 @@
  "name": "Margarita",
  "method": "shake",
  "glass": "rocks",
+ "color": "#e4e6b8",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "tequila-blanco",

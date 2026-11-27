@@ -3,6 +3,7 @@
  "name": "Pickle Martini",
  "method": "stir",
  "glass": "nick-and-nora",
+ "color": "#e4e4b8",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

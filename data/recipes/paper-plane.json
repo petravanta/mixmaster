@@ -3,6 +3,7 @@
  "name": "Paper Plane",
  "method": "shake",
  "glass": "coupe",
+ "color": "#e89a4a",
  "ingredients": [
   {
    "ingredient": "bourbon",

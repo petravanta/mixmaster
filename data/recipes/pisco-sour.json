@@ -3,6 +3,8 @@
  "name": "Pisco Sour",
  "method": "dry-shake",
  "glass": "coupe",
+ "color": "#eeeac8",
+ "float": "#f7f2e2",
  "ingredients": [
   {
    "ingredient": "pisco",

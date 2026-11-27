@@ -3,6 +3,7 @@
  "name": "Monte Carlo",
  "method": "stir",
  "glass": "coupe",
+ "color": "#a85a1e",
  "ingredients": [
   {
    "ingredient": "rye-whiskey",

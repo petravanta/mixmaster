@@ -3,6 +3,11 @@
  "name": "Tequila Sunrise",
  "method": "build",
  "glass": "highball",
+ "color": [
+  "#c8203a",
+  "#f5a623"
+ ],
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "tequila-blanco",

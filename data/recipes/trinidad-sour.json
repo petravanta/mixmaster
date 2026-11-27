@@ -3,6 +3,7 @@
  "name": "Trinidad Sour",
  "method": "shake",
  "glass": "coupe",
+ "color": "#8c2a1c",
  "ingredients": [
   {
    "ingredient": "angostura",

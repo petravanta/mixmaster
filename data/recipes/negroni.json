@@ -3,6 +3,8 @@
  "name": "Negroni",
  "method": "stir",
  "glass": "rocks",
+ "color": "#b3202a",
+ "ice": "large",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

@@ -3,6 +3,7 @@
  "name": "Manhattan",
  "method": "stir",
  "glass": "coupe",
+ "color": "#8a3b12",
  "ingredients": [
   {
    "ingredient": "rye-whiskey",

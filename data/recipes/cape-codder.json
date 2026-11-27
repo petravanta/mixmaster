@@ -3,6 +3,8 @@
  "name": "Cape Codder",
  "method": "build",
  "glass": "highball",
+ "color": "#c42a3e",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "vodka",

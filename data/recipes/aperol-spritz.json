@@ -3,6 +3,8 @@
  "name": "Aperol Spritz",
  "method": "build",
  "glass": "wine",
+ "color": "#f27a2b",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "prosecco",

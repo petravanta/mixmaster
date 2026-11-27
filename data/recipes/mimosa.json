@@ -3,6 +3,7 @@
  "name": "Mimosa",
  "method": "build",
  "glass": "flute",
+ "color": "#f5c04a",
  "ingredients": [
   {
    "ingredient": "champagne",

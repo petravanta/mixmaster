@@ -3,6 +3,8 @@
  "name": "Clover Club",
  "method": "dry-shake",
  "glass": "coupe",
+ "color": "#e8829a",
+ "float": "#f8e8ec",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

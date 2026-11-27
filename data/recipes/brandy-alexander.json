@@ -3,6 +3,7 @@
  "name": "Brandy Alexander",
  "method": "shake",
  "glass": "coupe",
+ "color": "#c9a37a",
  "ingredients": [
   {
    "ingredient": "cognac",

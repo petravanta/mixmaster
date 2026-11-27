@@ -3,6 +3,7 @@
  "name": "French 75",
  "method": "shake",
  "glass": "flute",
+ "color": "#f1e6b0",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

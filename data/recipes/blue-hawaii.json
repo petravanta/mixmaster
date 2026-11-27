@@ -3,6 +3,8 @@
  "name": "Blue Hawaii",
  "method": "shake",
  "glass": "highball",
+ "color": "#3fb8c4",
+ "ice": "cubes",
  "ingredients": [
   {
    "ingredient": "white-rum",

@@ -3,6 +3,7 @@
  "name": "20th Century",
  "method": "shake",
  "glass": "coupe",
+ "color": "#ebe3c4",
  "ingredients": [
   {
    "ingredient": "london-dry-gin",

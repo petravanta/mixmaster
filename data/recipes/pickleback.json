@@ -3,6 +3,7 @@
  "name": "Pickleback",
  "method": "build",
  "glass": "shot",
+ "color": "#c8a050",
  "ingredients": [
   {
    "ingredient": "irish-whiskey",

@@ -19,6 +19,14 @@ two months ago, the crème de violette you bought for one Aviation, the Campari 
 - Your data stays in your browser and, if you like, your own Google Drive. Export and import backups in Settings.
 - Installs on a phone, works offline once loaded.
 
+## Drink pictures and shaken or stirred
+
+Each drink shows a small drawing of its glass, filled with its colour. The recipe's `glass`, `color` (one `#rrggbb`, or
+two, bottom first, for a gradient), `float` (foam, cream or crema on top), `ice` (`cubes`, `large`, `crushed`) and the
+`sparkling` tag decide what's drawn. `Mix.methodHint()` in [`mix.js`](mix.js) says whether it's shaken, stirred or
+built, and why, from the method and what goes in: citrus, juice, cream, coffee and egg get shaken, drinks without
+them get stirred so they stay clear and silky, and bubbles never go in the shaker.
+
 ## How recommendations work
 
 All of it is in [`mix.js`](mix.js), with tests in [`scripts/mix.test.js`](scripts/mix.test.js).

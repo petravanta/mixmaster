@@ -3,6 +3,7 @@
  "name": "Old Pal",
  "method": "stir",
  "glass": "coupe",
+ "color": "#c4473a",
  "ingredients": [
   {
    "ingredient": "rye-whiskey",
