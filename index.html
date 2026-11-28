@@ -5,112 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Mixmaster</title>
 <meta name="description" content="Cocktails ranked by what's in your bar, pushing the ones that use up opened, aging and specialty bottles.">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#172129" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fffcfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16131b" media="(prefers-color-scheme: dark)">
 <script>try{var t=localStorage.getItem('petravanta.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://petravanta.github.io/general/shared/theme.css">
 <style>
-/* ===== Shared look: petravanta's apps =====
-   Canonical copy of the tokens, type and components used by Fitness Coach and Skating Mentor (and this hub).
-   Apps currently inline this block between "Shared look" and "end shared look"; update both when it changes.
-   Each app only overrides the --accent values after this block. */
-:root{
-  --bg:#eef2f4; --surface:#ffffff; --sunk:#e3e9ec; --line:#cdd6db; --ink:#14212a; --muted:#566771; --faint:#8a99a2;
-  --lv-new:#9aa8b0; --lv-learn:#c07a00; --lv-dev:#2f6fd0; --lv-conf:#11897a; --lv-solid:#0c5e3e;
-  --lv-learn-bg:#fbefd9; --lv-dev-bg:#e1ebfa; --lv-conf-bg:#d9f1ec; --lv-solid-bg:#d5eadf;
-  --danger:#b3261e; --danger-soft:#fbe3e1;
-  --f-display:"Unbounded","Arial Rounded MT Bold",system-ui,sans-serif;
-  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
-  --r:10px;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0f161b; --surface:#172129; --sunk:#111a20; --line:#2a3842; --ink:#e4ecf0; --muted:#9fb0ba; --faint:#6b7d88;
-  --lv-new:#64757f; --lv-learn:#e6a33a; --lv-dev:#6ea0f0; --lv-conf:#3cc3ad; --lv-solid:#6fd39a;
-  --lv-learn-bg:#3a2a10; --lv-dev-bg:#182a45; --lv-conf-bg:#0f3530; --lv-solid-bg:#143224;
-  --danger:#ff8a80; --danger-soft:#3d1c1a; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f161b; --surface:#172129; --sunk:#111a20; --line:#2a3842; --ink:#e4ecf0; --muted:#9fb0ba; --faint:#6b7d88;
-  --lv-new:#64757f; --lv-learn:#e6a33a; --lv-dev:#6ea0f0; --lv-conf:#3cc3ad; --lv-solid:#6fd39a;
-  --lv-learn-bg:#3a2a10; --lv-dev-bg:#182a45; --lv-conf-bg:#0f3530; --lv-solid-bg:#143224;
-  --danger:#ff8a80; --danger-soft:#3d1c1a; color-scheme:dark}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
-[hidden]{display:none!important}
-button,input,select,textarea{font:inherit;color:inherit}
-button{cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
-.topbar{display:flex;align-items:center;gap:16px;padding-block:12px 0;flex-wrap:wrap}
-.brand{font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
-.brand svg{width:26px;height:26px;flex:none}
-.save-state{margin-left:auto;font-size:12px;color:var(--muted);font-family:var(--f-mono)}
-nav.tabs{display:flex;gap:4px;overflow-x:auto;padding-top:8px;scrollbar-width:none}
-nav.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:8px 12px 9px;font-weight:600;color:var(--muted);white-space:nowrap}
-nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
-main{padding-block:20px 80px}
-h2{font-family:var(--f-display);font-weight:500;font-size:20px;letter-spacing:-.01em;margin:0;text-wrap:balance}
-h3{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0;font-weight:600}
-p{margin:0}
-.muted{color:var(--muted)}
-.small{font-size:13px}
-.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-.stack{display:flex;flex-direction:column;gap:16px}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
-.btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px}
-.btn:hover{border-color:var(--muted)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn.ghost{background:none}
-.btn.danger{color:var(--danger)}
-.btn.sm{padding:4px 10px;font-size:13px}
-.btn.big{padding:12px 22px;font-size:16px}
-.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--muted)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-label.field{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-select,input[type=text],input[type=number],textarea{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:15px;text-transform:none;letter-spacing:0;font-weight:500;min-width:0}
-textarea{resize:vertical}
-.ctx{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end}
-@media (max-width:720px){.ctx{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.ctx-note{font-size:13px;color:var(--muted);margin-top:10px}
-.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:700;white-space:nowrap;background:var(--sunk);color:var(--muted)}
-.pill.l1{background:var(--lv-learn-bg);color:var(--lv-learn)}
-.pill.l2{background:var(--lv-dev-bg);color:var(--lv-dev)}
-.pill.l3{background:var(--lv-conf-bg);color:var(--lv-conf)}
-.pill.l4{background:var(--lv-solid-bg);color:var(--lv-solid)}
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
-@media (max-width:720px){.two{grid-template-columns:minmax(0,1fr)}}
-.banner{background:var(--accent-soft);border-radius:var(--r);padding:12px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.banner p{flex:1 1 260px}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-@media (max-width:620px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.stat b{display:block;font-family:var(--f-mono);font-size:24px;font-weight:500}
-.stat span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.meter{height:8px;border-radius:4px;background:var(--sunk);overflow:hidden}
-.meter i{display:block;height:100%;border-radius:4px;background:var(--accent)}
-.scrim{position:fixed;inset:0;background:rgba(10,16,20,.35);z-index:40}
-.drawer{position:fixed;z-index:41;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--surface);border-left:1px solid var(--line);overflow-y:auto;
-  padding:calc(env(safe-area-inset-top,0px) + 18px) max(18px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) 18px;display:flex;flex-direction:column;gap:16px}
-@media (max-width:640px){.drawer{top:auto;left:0;width:100%;max-height:86vh;border-left:0;border-top:1px solid var(--line);border-radius:16px 16px 0 0;padding-left:max(18px,env(safe-area-inset-left,0px))}}
-.drawer .x{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(12px,env(safe-area-inset-right,0px));background:var(--sunk);border:0;border-radius:999px;width:32px;height:32px;font-size:18px;line-height:1}
-@media (max-width:640px){.drawer .x{top:12px}}
-.drawer h2{padding-right:40px}
-.drawer ul,.cues{margin:0;padding-left:18px}
-.checks{display:flex;flex-wrap:wrap;gap:6px}
-.checks label{display:inline-flex;align-items:center;gap:5px;font-size:13px;border:1px solid var(--line);border-radius:6px;padding:3px 8px;background:var(--sunk)}
-.entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;padding:8px 0;border-top:1px solid var(--line)}
-.entry .meta{font-size:12px;color:var(--muted)}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 18px);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;z-index:60;max-width:calc(100% - 32px)}
-.empty{padding:28px 16px;text-align:center;color:var(--muted)}
-@media (prefers-reduced-motion:no-preference){.drawer{animation:slide .18s ease-out}@keyframes slide{from{transform:translateX(24px);opacity:.4}}}
-/* ===== end shared look ===== */
 /* Mixmaster accent: chartreuse */
 :root{--accent:#5d7a0f;--accent-ink:#ffffff;--accent-soft:#edf3db}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#b8d957;--accent-ink:#141b04;--accent-soft:#252f10}}
@@ -192,16 +96,18 @@ button.card:hover{border-color:var(--muted)}
 .suggest button{display:flex;justify-content:space-between;gap:12px;width:100%;border:0;background:none;padding:9px 14px;text-align:left}
 .suggest button:hover,.suggest button[aria-selected="true"]{background:var(--sunk)}
 .suggest .muted{font-size:12px}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg{align-self:flex-start;display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
 .seg button{border:0;background:none;padding:5px 12px;font-size:13px;font-weight:600;color:var(--muted)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .toast{display:flex;align-items:center;gap:12px}
 .toast button{background:none;border:1px solid currentColor;color:inherit;border-radius:999px;padding:2px 10px;font-weight:700;font-size:13px}
+.help{margin:0}
 .help dt{font-weight:600;margin-top:8px}
 .help dd{margin:0;color:var(--muted);font-size:14px}
 .check{display:flex;gap:8px;align-items:flex-start;font-size:14px}
 .check input{margin-top:4px}
 a{color:var(--accent)}
+#driveBanner{padding-top:16px}
 </style>
 </head>
 <body>
@@ -223,10 +129,14 @@ a{color:var(--accent)}
     </nav>
   </div>
 </header>
+<div class="wrap" id="driveBanner" hidden></div>
 <main class="wrap" id="main"><p class="empty">Loading the catalog…</p></main>
 <div data-version-footer></div>
 <div id="layer"></div>
 <input type="file" id="fileIn" accept=".json,application/json" hidden>
+<script src="https://petravanta.github.io/general/shared/google-token.js"></script>
+<script src="https://petravanta.github.io/general/shared/drive-store.js"></script>
+<script src="https://petravanta.github.io/general/shared/local-day.js"></script>
 <script src="mix.js"></script>
 <script>
 'use strict';
@@ -248,7 +158,7 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const now = () => new Date().toISOString();
 const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
-const today = () => new Date().toISOString().slice(0, 10);
+const today = () => LocalDay.today(); // the person's own calendar day, not UTC's
 function lsGet(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
 function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
 
@@ -489,7 +399,7 @@ function bottleMeta(b) {
   const u = Mix.urgency(C, b, Date.now());
   if (u.value > 1) return { text: u.why.join(', '), hot: true };
   const bits = [];
-  if (b.openedAt) bits.push(`opened ${new Date(b.openedAt).toLocaleDateString()}`);
+  if (b.openedAt) bits.push(`opened ${LocalDay.toDate(b.openedAt).toLocaleDateString()}`);
   if (b.mood === 'savour') bits.push('saving it');
   return { text: bits.join(' · '), hot: false };
 }
@@ -569,8 +479,12 @@ function openDrawer(title, inner, wire, still) {
   $('#layer').innerHTML = `<div class="scrim" data-close></div><aside class="drawer${still ? ' still' : ''}" role="dialog" aria-modal="true" aria-label="${esc(title)}"><button class="x" type="button" data-close aria-label="Close">×</button><h2>${esc(title)}</h2>${inner}</aside>`;
   $('#layer').querySelectorAll('[data-close]').forEach(b => b.onclick = closeDrawer);
   if (wire) wire($('#layer .drawer'));
+  // One Back-stack layer per open drawer (redraws and drawer-to-drawer swaps reuse it), so the phone's Back,
+  // the browser's Back and Esc close the drawer instead of leaving the app (STANDARDS.md, "Back button")
+  if (!drawerLayer && window.BackStack) drawerLayer = BackStack.push(() => { drawerLayer = null; $('#layer').innerHTML = ''; }, { esc: true });
 }
-function closeDrawer() { $('#layer').innerHTML = ''; }
+let drawerLayer = null;
+function closeDrawer() { if (drawerLayer) drawerLayer.close(); else $('#layer').innerHTML = ''; }
 let toastTimer;
 function toast(msg, ms = 2600, action) {
   clearTimeout(toastTimer);
@@ -587,201 +501,6 @@ function download(blob, name) {
   setTimeout(() => URL.revokeObjectURL(a.href), 4000);
 }
 
-/* ===== Google sign-in shared by petravanta's apps =====
-   Canonical copy: https://github.com/petravanta/general/blob/main/shared/google-token.js (see STANDARDS.md, "Staying connected to Google Drive").
-   Every app lives on petravanta.github.io and uses the same OAuth client, so a Drive token one app gets works in all of them.
-   This keeps that token where every app can see it (localStorage key petravanta.google), one per Google account, so
-   reconnecting in one app reconnects them all, and an app only ever uses the token of the account it connected with.
-   Google gives a static site no refresh token: a token lasts an hour, and getting a new one opens Google's window,
-   which browsers only allow right after a tap. With the account's email as a hint, that window closes by itself. */
-const GoogleToken=(()=>{
-  const KEY='petravanta.google', SCOPE='https://www.googleapis.com/auth/drive.file';
-  const read=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'null')||{}}catch(e){return {}}};
-  const write=v=>{try{localStorage.setItem(KEY,JSON.stringify(v))}catch(e){}};
-  const subs=[];
-  // Another tab or app on this site got a token: let this one pick it up without a tap
-  window.addEventListener('storage',e=>{if(e.key===KEY) subs.forEach(f=>{try{f()}catch(_){}})});
-  function gis(){return new Promise((res,rej)=>{
-    if(window.google&&google.accounts&&google.accounts.oauth2) return res();
-    const s=document.createElement('script'); s.src='https://accounts.google.com/gsi/client'; s.onload=res; s.onerror=()=>rej({code:'offline'}); document.head.appendChild(s)})}
-  // A token for this account with time left on it, or null
-  function get(email){const t=email&&(read().tokens||{})[email]; return t&&t.exp>Date.now()?t:null}
-  // o: {clientId, hint:'email to suggest', prompt:'' | 'select_account' | 'consent'}. Call from a tap. Resolves {token, exp, email}.
-  function request(o){return new Promise(async(res,rej)=>{
-    try{await gis()}catch(e){return rej(e)}
-    google.accounts.oauth2.initTokenClient({client_id:o.clientId,scope:SCOPE,login_hint:o.hint||undefined,error_callback:rej,
-      callback:async r=>{
-        if(r.error) return rej(r);
-        const t={token:r.access_token,exp:Date.now()+(Number(r.expires_in||3600)-60)*1000};
-        // Which account it is, so the token is filed under the right one
-        let email='';
-        try{const j=await (await fetch('https://www.googleapis.com/drive/v3/about?fields=user(emailAddress)',{headers:{Authorization:'Bearer '+t.token}})).json(); email=(j.user&&j.user.emailAddress)||''}catch(e){}
-        if(!email) email=o.hint||'';
-        if(email){
-          const v=read(), now=Date.now(); v.tokens=v.tokens||{};
-          for(const k in v.tokens) if(!(v.tokens[k].exp>now)) delete v.tokens[k];
-          v.tokens[email]=t; v.last=email; write(v);
-        }
-        res({...t,email});
-      }
-    }).requestAccessToken({prompt:o.prompt||''});
-  })}
-  // Signing out on this browser. Google's permission stays, since the other apps and devices still use it.
-  function forget(email){const v=read(); if(v.tokens&&email) delete v.tokens[email]; write(v)}
-  return {get,request,forget,gis,onChange:f=>subs.push(f),get lastEmail(){return read().last||''}};
-})();
-/* ===== end Google sign-in ===== */
-/* ===== Drive store: petravanta's apps =====
-   Canonical copy: https://github.com/petravanta/general/blob/main/shared/drive-store.js (see STANDARDS.md, "Data lives in Google Drive").
-   Needs GoogleToken (shared/google-token.js) inlined above it.
-   Keeps an app's data in one JSON file in the user's Google Drive, at petravanta/<App name>/<file> (drive.file scope: the apps
-   only see files they created). A file saved before folders existed is moved there once, on the first connect.
-   The browser keeps a copy of the last data, so the app opens straight away even when the hour-long Google sign-in has run out,
-   and changes that haven't reached Drive yet (for example while offline). The first tap after that reconnects, merges with
-   Drive's copy and saves. */
-function DriveStore(o){
-  // o: {clientId, file:'App data.json', folder:'App name' (default: file without ' data.json'), app:'app-id', key:'localStorage prefix', empty:()=>data, merge:(remote,local)=>data,
-  //     onChange:()=>{}, onRemote:data=>{} (Drive's copy changed what the app shows)}
-  const API='https://www.googleapis.com';
-  const get=k=>{try{return JSON.parse(localStorage.getItem(o.key+'.'+k)||'null')}catch(e){return null}};
-  const put=(k,v)=>{try{v==null?localStorage.removeItem(o.key+'.'+k):localStorage.setItem(o.key+'.'+k,JSON.stringify(v));return true}catch(e){return false}};
-  const S={token:null,exp:0,email:get('email')||'',fileId:get('file'),folderId:get('folder'),known:!!get('known'),data:null,stale:false,busy:false,err:null,last:null,timer:null,ask:0};
-  // The app's own token from before tokens were shared; good until it runs out
-  const t=get('token'); if(t&&t.exp>Date.now()){S.token=t.token;S.exp=t.exp} put('token',null);
-  if(S.known){const c=get('copy')||get('pending'); if(c){S.data=c; S.stale=true}}
-  // Load Google's script now: if it only starts loading on the tap, the browser may block its window
-  if(o.clientId&&S.known) GoogleToken.gis().catch(()=>{});
-  const live=()=>{
-    const g=GoogleToken.get(S.email); if(g&&g.exp>S.exp){S.token=g.token;S.exp=g.exp}
-    return !!S.token&&Date.now()<S.exp;
-  };
-  const note=()=>{try{o.onChange&&o.onChange()}catch(e){}};
-  // Opens Google's window, so call this from a tap. For an account that already agreed, the window closes by itself.
-  // A first connect suggests the account the other apps use; after that, the account this app connected with.
-  async function signIn(){
-    const r=await GoogleToken.request({clientId:o.clientId,hint:S.email||(S.known?'':GoogleToken.lastEmail),prompt:S.known||GoogleToken.lastEmail?'':'consent'});
-    S.token=r.token; S.exp=r.exp; S.known=true; put('known',true);
-    if(r.email&&r.email!==S.email){S.email=r.email; put('email',r.email)}
-  }
-  async function call(path,opt={}){
-    if(!live()) throw {code:'expired'};
-    let r; try{r=await fetch(API+path,{...opt,headers:{...(opt.headers||{}),Authorization:'Bearer '+S.token}})}catch(e){throw {code:'offline'}}
-    if(r.status===401){S.token=null; S.exp=0; GoogleToken.forget(S.email); throw {code:'expired'}}
-    if(!r.ok) throw {code:'http',status:r.status};
-    return r;
-  }
-  // Files live in petravanta/<App name>/ in the user's Drive (STANDARDS.md, "Where it lives").
-  // Every app shares one OAuth client, so they all see the one petravanta folder whichever app made it.
-  const ROOT='petravanta', SUB=o.folder||o.file.replace(/ data\.json$/i,'');
-  const FOLDER='application/vnd.google-apps.folder', qs=v=>"'"+String(v).replace(/\\/g,'\\\\').replace(/'/g,"\\'")+"'";
-  async function folder(name,parent){
-    const q=encodeURIComponent(`name=${qs(name)} and mimeType='${FOLDER}' and ${qs(parent)} in parents and trashed=false`);
-    const j=await (await call(`/drive/v3/files?q=${q}&orderBy=createdTime&fields=files(id)`)).json();
-    if(j.files&&j.files[0]) return j.files[0].id; // two apps racing may make two; the oldest wins from then on
-    return (await (await call('/drive/v3/files?fields=id',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name,mimeType:FOLDER,parents:[parent]})})).json()).id;
-  }
-  async function home(){
-    if(S.folderId) return S.folderId;
-    S.folderId=await folder(SUB,await folder(ROOT,'root')); put('folder',S.folderId); return S.folderId;
-  }
-  // One-time move of a file saved before folders (in My Drive's root) into the app's folder. Moving keeps the file's id,
-  // so other devices that remember it carry on.
-  async function tidy(id){
-    if(get('moved')===id) return;
-    const dir=await home(), f=await (await call(`/drive/v3/files/${id}?fields=parents`)).json(), from=(f.parents||[]).filter(p=>p!==dir);
-    if((f.parents||[]).indexOf(dir)<0) await call(`/drive/v3/files/${id}?addParents=${dir}`+(from.length?`&removeParents=${from.join(',')}`:'')+'&fields=id',
-      {method:'PATCH',headers:{'Content-Type':'application/json'},body:'{}'});
-    put('moved',id);
-  }
-  async function find(){
-    if(S.fileId){try{const j=await (await call(`/drive/v3/files/${S.fileId}?fields=id,trashed`)).json(); if(!j.trashed){await tidy(S.fileId); return S.fileId}}catch(e){if(e.code!=='http') throw e}}
-    const dir=await home(), name=`name=${qs(o.file)} and trashed=false`, list=async q=>
-      (await (await call(`/drive/v3/files?q=${encodeURIComponent(q)}&orderBy=modifiedTime desc&fields=files(id)`)).json()).files||[];
-    // The app's folder first, then anywhere else this app can see (a copy saved before folders)
-    const hit=(await list(`${name} and ${qs(dir)} in parents`))[0]||(await list(name))[0];
-    S.fileId=hit?hit.id:null; put('file',S.fileId); if(S.fileId) await tidy(S.fileId); return S.fileId;
-  }
-  async function read(){const id=await find(); return id?(await call(`/drive/v3/files/${id}?alt=media`)).json():null}
-  async function write(data){
-    const body=JSON.stringify({app:o.app,saved:new Date().toISOString(),...data}), id=await find();
-    if(id){await call(`/upload/drive/v3/files/${id}?uploadType=media`,{method:'PATCH',headers:{'Content-Type':'application/json'},body});return}
-    const b='b'+Math.random().toString(36).slice(2), meta=JSON.stringify({name:o.file,mimeType:'application/json',parents:[await home()]});
-    const j=await (await call('/upload/drive/v3/files?uploadType=multipart&fields=id',{method:'POST',headers:{'Content-Type':'multipart/related; boundary='+b},
-      body:`--${b}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${meta}\r\n--${b}\r\nContent-Type: application/json\r\n\r\n${body}\r\n--${b}--`})).json();
-    S.fileId=j.id; put('file',j.id);
-  }
-  // Data opened from this browser's copy may be behind Drive's: merge Drive's in before writing over it
-  async function catchUp(){
-    if(!S.stale) return;
-    const remote=await read(); S.stale=false;
-    if(!remote) return;
-    const before=JSON.stringify(S.data); S.data=o.merge(remote,S.data); put('copy',S.data);
-    if(JSON.stringify(S.data)!==before) try{o.onRemote&&o.onRemote(S.data)}catch(e){}
-  }
-  async function flush(){
-    clearTimeout(S.timer); if(!S.data||S.busy) return;
-    if(!live()){note();return}
-    S.busy=true; note();
-    try{await catchUp(); await write(S.data); S.err=null; S.last=new Date(); put('pending',null)}
-    catch(e){S.err=e.code==='expired'?null:e.code==='offline'?'offline':'error'}
-    finally{S.busy=false; note()}
-  }
-  // Load: Drive's copy, merged with any changes this browser hadn't saved yet. Creates the file on first use.
-  async function load(interactive){
-    if(!live()){ if(!interactive) throw {code:'expired'}; await signIn() }
-    S.busy=true; note();
-    const pending=get('pending');
-    try{
-      const remote=await read();
-      let data=remote?o.merge(remote,o.empty()):o.empty();
-      if(pending) data=o.merge(pending,data);
-      S.data=data; S.stale=false; S.err=null; S.last=new Date(); put('copy',data);
-      if(!remote||pending){await write(data); put('pending',null)}
-      return data;
-    }catch(e){
-      // offline with unsaved changes: carry on from them; they go to Drive once the connection is back
-      if(e.code==='offline'&&pending){S.data=o.merge(pending,o.empty()); S.stale=true; S.err='offline'; return S.data}
-      S.err=e.code==='offline'?'offline':e.code==='expired'?null:'error'; throw e;
-    }finally{S.busy=false; note()}
-  }
-  // Pick up changes made on another device
-  async function refresh(){
-    if(!live()||S.busy||!S.data) return false;
-    try{const r=await read(); if(!r) return false; const before=JSON.stringify(S.data); S.data=o.merge(r,S.data); S.stale=false; put('copy',S.data); return JSON.stringify(S.data)!==before}
-    catch(e){return false}
-  }
-  function save(data){S.data=data; put('copy',data); if(!put('pending',data)) {/* storage full or blocked: Drive still gets it */} clearTimeout(S.timer); S.timer=setTimeout(flush,1500); note()}
-  function signOut(){
-    GoogleToken.forget(S.email);
-    S.token=null; S.exp=0; S.data=null; S.stale=false; S.email=''; ['known','file','folder','moved','pending','copy','email'].forEach(k=>put(k,null)); S.known=false; note();
-  }
-  // Tokens last an hour. Renew on a tap when it is close to running out or gone, then save anything waiting.
-  document.addEventListener('click',e=>{
-    if(!o.clientId||!S.known||e.target.closest('[data-drive]')) return;
-    live(); if(S.exp-Date.now()>10*60000||Date.now()-S.ask<60000) return;
-    S.ask=Date.now(); signIn().then(flush).catch(()=>note());
-  },true);
-  // Another app or tab reconnected this account: carry on with its token
-  GoogleToken.onChange(()=>{if(S.known&&S.data&&live()) flush(); else note()});
-  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden') flush()});
-  window.addEventListener('online',()=>flush());
-  function status(){
-    if(!S.data) return '';
-    if(S.busy) return 'Saving to Google Drive…';
-    const waiting=!!get('pending');
-    if(S.err==='offline') return 'Offline · changes save to Drive when you’re back online';
-    if(S.err) return 'Couldn’t reach Google Drive · will retry';
-    if(!live()) return waiting?'Tap anywhere to save to Google Drive':'Tap anywhere to reconnect Google Drive';
-    if(waiting) return 'Saving to Google Drive…';
-    return 'Saved to Google Drive'+(S.last?' · '+S.last.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}):'');
-  }
-  // folder(): the id of petravanta/<App name>/, made if missing, for anything else the app saves to Drive (Google Docs, photos)
-  return {load,save,flush,refresh,signIn,signOut,status,live,folder:home,
-    get data(){return S.data}, get known(){return S.known}, get configured(){return !!o.clientId}, get file(){return o.file},
-    get needsTap(){return !!S.data&&!live()}};
-}
-/* ===== end Drive store ===== */
 const store = DriveStore({
   clientId: GOOGLE_CLIENT_ID, file: 'Mixmaster data.json', app: 'mixmaster', key: 'mixmaster.drive',
   empty: blankDoc, merge: (remote, local) => mergeDocs(local, remote),
@@ -789,7 +508,16 @@ const store = DriveStore({
   onRemote: data => remoteIn(data)
 });
 function remoteIn(data) { doc = mergeDocs(doc, data); lsSet(KEY, doc); if (!$('#layer').innerHTML) render(); }
-function showSaveState() { $('#saveState').textContent = store.known ? store.status() || 'Saved in this browser' : 'Saved in this browser'; }
+// The status line's data-state is ok, saving, local or the Drive store's problem.kind (STANDARDS.md, "Nightbloom");
+// problems only the person can fix (Drive full, permission refused) also get a banner over the page
+function showSaveState() {
+  const el = $('#saveState'), p = store.known ? store.problem : null, text = store.known ? store.status() : '';
+  el.textContent = text || 'Saved in this browser';
+  el.dataset.state = !store.known || !text ? 'local' : p ? p.kind : /^Saving/.test(text) ? 'saving' : store.live() ? 'ok' : 'local';
+  const ban = $('#driveBanner'), stuck = p && (p.kind === 'full' || p.kind === 'denied');
+  ban.hidden = !stuck;
+  if (stuck) ban.innerHTML = `<div class="banner bad"><p>${esc(p.text)}. Your bar is safe in this browser${p.kind === 'full' ? ': free some space in Google Drive and it saves again by itself' : ': reconnect in Settings and allow Mixmaster to see its own files'}.</p><button class="btn sm" type="button" data-open-settings>Settings</button></div>`;
+}
 
 /* ---------- Settings ---------- */
 function drivePanel() {
@@ -839,11 +567,13 @@ $('#fileIn').onchange = async e => {
 /* ---------- Events ---------- */
 $('#tabs').onclick = e => { const b = e.target.closest('[data-tab]'); if (b) setTab(b.dataset.tab); };
 $('#settingsBtn').onclick = settingsDrawer;
+$('#driveBanner').onclick = e => { if (e.target.closest('[data-open-settings]')) settingsDrawer(); };
 $('#main').addEventListener('click', e => {
   const r = e.target.closest('[data-recipe]'); if (r) return recipeDrawer(r.dataset.recipe);
   const b = e.target.closest('[data-bottle]'); if (b) return openBottle(b.dataset.bottle);
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#layer').innerHTML) closeDrawer(); });
+// Esc without the Back stack (it didn't load, say offline on a first visit); with it, the layer handles Esc
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !drawerLayer && $('#layer').innerHTML) closeDrawer(); });
 addEventListener('storage', e => { if (e.key === KEY) { doc = upgrade(lsGet(KEY)); if (!$('#layer').innerHTML) render(); } });
 document.addEventListener('visibilitychange', async () => {
   if (document.visibilityState === 'visible' && store.known && store.live() && await store.refresh()) remoteIn(store.data);
@@ -865,9 +595,6 @@ document.addEventListener('visibilitychange', async () => {
   }
 })();
 </script>
-<script src="https://petravanta.github.io/general/shared/hub-link.js" defer></script>
-<script src="https://petravanta.github.io/general/shared/theme-switch.js" defer></script>
-<script src="https://petravanta.github.io/general/shared/version-footer.js" defer></script>
-<script>if('serviceWorker' in navigator&&/^(petravanta\.github\.io|localhost|127\.0\.0\.1)$/.test(location.hostname))navigator.serviceWorker.register('sw.js').catch(function(){})</script>
+<script src="https://petravanta.github.io/general/shared/app.js" defer></script>
 </body>
 </html>
