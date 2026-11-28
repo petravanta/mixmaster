@@ -3,9 +3,11 @@
 Follow the shared standards in [petravanta/general STANDARDS.md](https://github.com/petravanta/general/blob/main/STANDARDS.md)
 (locally `../general/STANDARDS.md`). Only Mixmaster specifics are here.
 
-- **One static page**, `index.html`, no build step. Serve the folder (`python3 -m http.server`) to run it. The shared theme,
-  `google-token.js` and `drive-store.js` are inlined between their marker comments; when the canonical copies in
-  `general/shared/` change, update them here.
+- **One static page**, `index.html`, no build step. Serve the folder (`python3 -m http.server`) to run it. All shared code loads by URL
+  from `petravanta.github.io/general/shared/` (STANDARDS *Shared code*): `theme.css` in `<head>`, then `google-token.js`,
+  `drive-store.js` and `local-day.js` before the app's script, and one `app.js` tag (Back stack, hub menu, theme switch,
+  version footer, `sw.js`) before `</body>`. Never paste copies back in. Drawers go through one `BackStack` layer
+  (`openDrawer` / `closeDrawer`); days come from `LocalDay`, never `toISOString().slice(0, 10)`.
 - **Accent**: chartreuse, `#5d7a0f` light / `#b8d957` dark.
 - **The engine is `mix.js`**, plain JavaScript loaded by the page (`window.Mix`) and by the tests (`require`). All ranking
   logic lives there, none in `index.html`. Run `node --test scripts/*.test.js` after changing it, and keep the README's
@@ -21,3 +23,5 @@ Follow the shared standards in [petravanta/general STANDARDS.md](https://github.
   merge rules are `mergeDocs()`. A finished bottle is deleted (tombstoned), not kept at level 0.
 - Contributions from other people come in as pull requests to `data/` (CONTRIBUTING.md) or the *Suggest a recipe* issue
   form (`.github/ISSUE_TEMPLATE/recipe.yml`). Those PRs wait for review; they are not auto-merged.
+
+Checked against General as of 2026-11-28.

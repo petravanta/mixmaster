@@ -76,7 +76,8 @@ history refer to catalog entries by id. AGENTS.md has the field-by-field shape.
 ## Google Drive sign-in
 
 Uses the shared OAuth client for `petravanta.github.io` and the `drive.file` scope, through the shared
-`google-token.js` and `drive-store.js` (inlined in `index.html`). One sign-in covers all of petravanta's apps.
+`google-token.js` and `drive-store.js`, loaded by URL from petravanta/general. One sign-in covers all of petravanta's apps.
+When Google is busy the app backs off and keeps retrying by itself; the status dot under the header says what came back.
 
 ## Next steps
 
@@ -84,7 +85,7 @@ Uses the shared OAuth client for `petravanta.github.io` and the `drive.file` sco
 - Bottle sizes, so the app knows when a pour would finish a bottle and can plan a "finish it" session.
 - Lowering levels when you log a drink.
 - More of the catalog: more modern classics and low-ABV drinks, and more substitutes.
-- Listing Mixmaster on the hub (card, `apps.json`, ruleset lists, glyph) in petravanta/general.
+- Its icon glyph in petravanta/general `tools/glyphs/` (the hub card, menu entry and ruleset lists are in).
 
 ## Publishing
 
