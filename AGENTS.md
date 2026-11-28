@@ -11,7 +11,7 @@ Follow the shared standards in [petravanta/general STANDARDS.md](https://github.
 - **Accent**: chartreuse, `#5d7a0f` light / `#b8d957` dark.
 - **The engine is `mix.js`**, plain JavaScript loaded by the page (`window.Mix`) and by the tests (`require`). All ranking
   logic lives there, none in `index.html`. Run `node --test scripts/*.test.js` after changing it, and keep the README's
-  *How recommendations work* and the Settings drawer's explanation in step with it.
+  *How recommendations work* and the Settings tab's explanation in step with it.
 - **Built-in knowledge** is in `data/`: `ingredients.json` and `glasses.json` are lists; recipes are a folder dataset,
   one file per recipe in `data/recipes/<id>.json`, with `data/recipes.json` listing the ids in display order. Schemas
   are in `data/schema/` (`recipe.schema.json` covers each recipe file). Run `node scripts/check-data.js` after changing
