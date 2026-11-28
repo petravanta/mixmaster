@@ -59,8 +59,13 @@ button.card:hover{border-color:var(--muted)}
 .art .ice{fill:#fff;fill-opacity:.35;stroke:#fff;stroke-opacity:.8;stroke-width:.8}
 .art .bubbles{fill:#fff;fill-opacity:.75}
 .art .cap{fill:var(--muted);fill-opacity:.7}
-.art .tag{fill:var(--surface);fill-opacity:.4;stroke:var(--muted);stroke-width:.9}
+.art .tag{fill:var(--surface);fill-opacity:.6;stroke:var(--muted);stroke-width:.9}
 .art.empty .glass-line{stroke-dasharray:2.5 2}
+.art .cork{fill:#c9a26a;stroke:#8a6a3a;stroke-width:.8}
+.art .foil{fill:#c9a43a;stroke:#8a6e1e;stroke-width:.8}
+.art .wax{fill:#b3121f;stroke:#7a0a12;stroke-width:.8}
+.art .straw-bg{fill:#d9b46a;fill-opacity:.35}
+.art .straw{fill:none;stroke:#b8893a;stroke-width:1.3}
 .hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center}
 .hint{margin:0;font-size:14px;padding:8px 12px;border-left:3px solid var(--accent);background:var(--sunk);border-radius:0 8px 8px 0}
 .card .why{margin:0;padding-left:16px;font-size:13px;color:var(--muted)}
@@ -309,16 +314,35 @@ function drinkArt(r, size = 40) {
    Each bottle in My bar is drawn in the same style as the drinks: an outline filled with what's inside (the
    ingredient's `color`), up to how much is left. The shape comes from the ingredient's `bottle`, or its category. */
 const BOTTLE = {
-  // body: the part that holds the liquid (neck included); top: the surface when full; cap: drawn solid; tag: a paper label
+  // body: the part that holds the liquid (neck included); top: the surface when full; cap: drawn solid; tag: a paper
+  // label; wax, cork, foil: a seal in that material; straw: a woven wrap over the lower half; rest: extra outline
   tall: { body: 'M21 6H27V12Q27 14 30 15Q33 16 33 19V48Q33 50 31 50H17Q15 50 15 48V19Q15 16 18 15Q21 14 21 12Z', top: 19, cap: 'M20.5 2.5H27.5V6.5H20.5Z' },
   round: { body: 'M21.5 6H26.5V13Q26.5 16 30.5 18.5Q34 21 34 25V48Q34 50 32 50H16Q14 50 14 48V25Q14 21 17.5 18.5Q21.5 16 21.5 13Z', top: 24, cap: 'M21 2.5H27V6.5H21Z' },
   squat: { body: 'M21 10H27V15Q27 17 31 18Q37 19 37 23V48Q37 50 35 50H13Q11 50 11 48V23Q11 19 17 18Q21 17 21 15Z', top: 23, cap: 'M20 5.5H28V10.5H20Z' },
+  stepped: { body: 'M21 8H27V12Q27 14 29 14.5L33 15.5Q35 16 35 18V21Q35 22 36 23V48Q36 50 34 50H14Q12 50 12 48V23Q13 22 13 21V18Q13 16 15 15.5L19 14.5Q21 14 21 12Z', top: 24, cap: 'M20.5 3.5H27.5V8.5H20.5Z' },
+  apothecary: { body: 'M20 9H28V12Q28 13.5 30 14Q34 15 34 19V48Q34 50 32 50H16Q14 50 14 48V19Q14 15 18 14Q20 13.5 20 12Z', top: 19, cap: 'M19.5 4H28.5V9H19.5Z' },
+  waxed: { body: 'M21 11H27V14Q27 16 30 17L34 18Q36 18.5 36 21V48Q36 50 34 50H14Q12 50 12 48V21Q12 18.5 14 18L18 17Q21 16 21 14Z', top: 22,
+    wax: 'M19.5 3H28.5V12Q28.5 14.5 27.5 14.5Q26.5 14.5 26.5 17Q26.5 19.5 25.3 19.5Q24.2 19.5 24.2 16Q24.2 14 23.2 14Q22.2 14 22.2 17.5Q22.2 20.5 21 20.5Q19.5 20.5 19.5 17Z' },
+  square: { body: 'M20.5 8H27.5V13L35 16.5Q36 17 36 18V48Q36 50 34 50H14Q12 50 12 48V18Q12 17 13 16.5L20.5 13Z', top: 20, cap: 'M20 3H28V8H20Z' },
+  'square-cap': { body: 'M20.5 9H27.5V13L35 16.5Q36 17 36 18V48Q36 50 34 50H14Q12 50 12 48V18Q12 17 13 16.5L20.5 13Z', top: 20, cap: 'M17.5 2H30.5V9H17.5Z' },
+  sloped: { body: 'M21 6H27V10L35 19V48Q35 50 33 50H15Q13 50 13 48V19L21 10Z', top: 21, cap: 'M20.5 2H27.5V6.5H20.5Z' },
+  beehive: { body: 'M21 15H27V18Q27 20 31 21Q37 23 37 30V47Q37 50 34 50H14Q11 50 11 47V30Q11 23 17 21Q21 20 21 18Z', top: 27, cork: 'M18 9.5a6 6 0 1 0 12 0a6 6 0 1 0 -12 0ZM21.5 14.5H26.5V16H21.5Z' },
+  corked: { body: 'M19 9H29V13Q29 15 32 16Q35 17 35 20V48Q35 50 33 50H15Q13 50 13 48V20Q13 17 16 16Q19 15 19 13Z', top: 20, cork: 'M19.5 3H28.5V9H19.5Z', tag: 'M13 27H35V43H13Z' },
+  pear: { body: 'M21.5 6H26.5V14Q26.5 17 29 20Q37 28 37 40Q37 50 32 50H16Q11 50 11 40Q11 28 19 20Q21.5 17 21.5 14Z', top: 25, cap: 'M21 2H27V6.5H21Z' },
+  onion: { body: 'M22 5H26V11Q26 15 28 18Q36 24 36 36V47Q36 50 33 50H15Q12 50 12 47V36Q12 24 20 18Q22 15 22 11Z', top: 26, cap: 'M21.5 1.5H26.5V5.5H21.5Z', rest: 'M22 9H26M22 12H26' },
+  straw: { body: 'M21.5 6H26.5V13Q26.5 16 30.5 18.5Q34 21 34 25V48Q34 50 32 50H16Q14 50 14 48V25Q14 21 17.5 18.5Q21.5 16 21.5 13Z', top: 24, cap: 'M21 2.5H27V6.5H21Z', straw: 28 },
+  'long-neck': { body: 'M22 4H26V17Q26 21 29 23Q33 25 33 29V48Q33 50 31 50H17Q15 50 15 48V29Q15 25 19 23Q22 21 22 17Z', top: 29, cap: 'M21.5 1H26.5V4.5H21.5Z' },
+  champagne: { body: 'M21.5 6H26.5V12Q26.5 18 31 22Q34 25 34 30V48Q34 50 32 50H16Q14 50 14 48V30Q14 25 17 22Q21.5 18 21.5 12Z', top: 29, foil: 'M20.8 2H27.2V15.5Q24 17 20.8 15.5Z' },
   wine: { body: 'M21.5 9H26.5V14Q26.5 19 30 22Q32 24 32 28V48Q32 50 30 50H18Q16 50 16 48V28Q16 24 18 22Q21.5 19 21.5 14Z', top: 28, cap: 'M21.2 2.5H26.8V10H21.2Z' },
-  dasher: { body: 'M22 14H26V18Q26 20 29 21.5Q31 23 31 26V48Q31 50 29 50H19Q17 50 17 48V26Q17 23 19 21.5Q22 20 22 18Z', top: 26, cap: 'M21.5 9H26.5V14.5H21.5Z', tag: 'M15.5 29H32.5V44H15.5Z' },
+  dasher: { body: 'M22 14H26V18Q26 20 29 21.5Q31 23 31 26V48Q31 50 29 50H19Q17 50 17 48V26Q17 23 19 21.5Q22 20 22 18Z', top: 26, cap: 'M21.5 9H26.5V14.5H21.5Z', tag: 'M17 31H31V44H17Z' },
+  wrapped: { body: 'M22 14H26V18Q26 20 29 21.5Q31 23 31 26V48Q31 50 29 50H19Q17 50 17 48V26Q17 23 19 21.5Q22 20 22 18Z', top: 26, cap: 'M21.5 8H26.5V14.5H21.5Z', tag: 'M13.5 19.5H34.5V45.5H13.5Z' },
   flask: { body: 'M20 12H28V16Q35 18 35 26V48Q35 50 33 50H15Q13 50 13 48V26Q13 18 20 16Z', top: 26, cap: 'M19.5 8H28.5V12H19.5Z', rest: 'M19.5 10Q16 13 19 17M28.5 10Q32 13 29 17' },
   jug: { body: 'M15 8H31L30 14Q35 22 35 34V48Q35 50 33 50H15Q13 50 13 48V34Q13 22 18 14Z', top: 20, rest: 'M33.5 19Q40 21 39.5 30Q39 36 35 38.5M15 8L12.5 6' },
   jar: { body: 'M14 15H34V48Q34 50 32 50H16Q14 50 14 48Z', top: 18, cap: 'M13 10H35V15H13Z' },
-  soda: { body: 'M22 6H26V10Q26 13 28 16Q30 19 30 23V48Q30 50 28 50H20Q18 50 18 48V23Q18 19 20 16Q22 13 22 10Z', top: 23, cap: 'M21.5 3H26.5V6.5H21.5Z' }
+  egg: { body: 'M24 12C31 12 35 24 35 34C35 44 30 50 24 50C18 50 13 44 13 34C13 24 17 12 24 12Z', top: 14 },
+  soda: { body: 'M22 6H26V10Q26 13 28 16Q30 19 30 23V48Q30 50 28 50H20Q18 50 18 48V23Q18 19 20 16Q22 13 22 10Z', top: 23, cap: 'M21.5 3H26.5V6.5H21.5Z' },
+  contour: { body: 'M21.5 5H26.5V10Q26.5 13 29 17Q31 21 30 27Q29 31 30.5 36Q31.5 41 31 48Q31 50 29 50H19Q17 50 17 48Q16.5 41 17.5 36Q19 31 18 27Q17 21 19 17Q21.5 13 21.5 10Z', top: 22, cap: 'M21 2H27V5.5H21Z' },
+  siphon: { body: 'M16 20H32V48Q32 50 30 50H18Q16 50 16 48Z', top: 22, cap: 'M17 20L18.5 8H29.5L31 20ZM18.5 10.5H10.5V13H18.5Z', rest: 'M29.5 9.5L37 5' }
 };
 const BOTTLE_FOR = { spirit: 'tall', liqueur: 'round', 'fortified-wine': 'wine', wine: 'wine', bitters: 'dasher', syrup: 'flask', juice: 'jug', fresh: 'jar', pantry: 'jar', mixer: 'soda' };
 function bottleArt(b, size = 40) {
@@ -326,17 +350,20 @@ function bottleArt(b, size = 40) {
   const level = b.level == null ? 1 : Math.min(1, Math.max(0, b.level)), base = 50, y = base - (base - g.top) * level;
   const fizzy = i.category === 'mixer' && i.id !== 'cola' || i.family === 'sparkling';
   const bubbles = fizzy && level > 0.2 ? [[20, 0.75], [27, 0.45], [23, 0.2], [25, 0.85]].map(([x, f]) => `<circle cx="${x}" cy="${y + (base - y) * f}" r="1"/>`).join('') : '';
+  const straw = g.straw ? Array.from({ length: 9 }, (_, k) => { const x = 4 + k * 4.5; return `M${x} ${g.straw}L${x + 22} ${base}M${x + 22} ${g.straw}L${x} ${base}`; }).join('') : '';
   return `<svg class="art${level ? '' : ' empty'}" viewBox="0 0 48 52" width="${size}" height="${Math.round(size * 52 / 48)}" aria-hidden="true" focusable="false">
     <defs><clipPath id="${n}c"><path d="${g.body}"/></clipPath></defs>
-    <path d="${g.body}" class="glass-fill"/>
+    <path d="${g.body}" class="glass-fill"${i.glass ? ` style="fill:${i.glass};fill-opacity:.3"` : ''}/>
     <g clip-path="url(#${n}c)">
       ${level ? `<rect x="0" y="${y}" width="48" height="${base - y + 2}" fill="${i.color || '#d9a560'}" class="liquid"/>` : ''}
       <g class="bubbles">${bubbles}</g>
       ${level && level < 1 ? `<line x1="0" x2="48" y1="${y}" y2="${y}" class="surface"/>` : ''}
+      ${straw ? `<rect x="0" y="${g.straw}" width="48" height="${base - g.straw}" class="straw-bg"/><path d="${straw}" class="straw"/>` : ''}
     </g>
     ${g.tag ? `<path d="${g.tag}" class="tag"/>` : ''}
     ${g.cap ? `<path d="${g.cap}" class="cap"/>` : ''}
     <path d="${g.body}${g.rest ? ' ' + g.rest : ''}" class="glass-line"/>
+    ${g.cork ? `<path d="${g.cork}" class="cork"/>` : ''}${g.foil ? `<path d="${g.foil}" class="foil"/>` : ''}${g.wax ? `<path d="${g.wax}" class="wax"/>` : ''}
   </svg>`;
 }
 const ICE = { cubes: 'on ice', large: 'on a large cube', crushed: 'on crushed ice' };

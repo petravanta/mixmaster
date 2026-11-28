@@ -4,6 +4,8 @@
   "name": "London dry gin",
   "category": "spirit",
   "color": "#e3edf0",
+  "bottle": "stepped",
+  "glass": "#2f8a4a",
   "family": "gin",
   "aliases": [
    "gin"
@@ -13,14 +15,15 @@
   "id": "vodka",
   "name": "Vodka",
   "category": "spirit",
-  "color": "#e6ecf0"
+  "color": "#e6ecf0",
+  "bottle": "apothecary"
  },
  {
   "id": "bourbon",
   "name": "Bourbon",
   "category": "spirit",
   "color": "#c8782e",
-  "bottle": "squat",
+  "bottle": "waxed",
   "family": "whiskey",
   "substitutes": [
    "rye-whiskey"
@@ -31,7 +34,7 @@
   "name": "Rye whiskey",
   "category": "spirit",
   "color": "#b9692a",
-  "bottle": "squat",
+  "bottle": "sloped",
   "family": "whiskey",
   "substitutes": [
    "bourbon"
@@ -45,7 +48,8 @@
   "name": "Irish whiskey",
   "category": "spirit",
   "color": "#d69a45",
-  "bottle": "squat",
+  "bottle": "round",
+  "glass": "#2f7a3a",
   "family": "whiskey"
  },
  {
@@ -87,6 +91,7 @@
   "name": "Tequila blanco",
   "category": "spirit",
   "color": "#eceedf",
+  "bottle": "beehive",
   "family": "agave",
   "aliases": [
    "tequila"
@@ -97,6 +102,7 @@
   "name": "Mezcal",
   "category": "spirit",
   "color": "#e9e2c0",
+  "bottle": "corked",
   "family": "agave"
  },
  {
@@ -104,7 +110,7 @@
   "name": "Cognac",
   "category": "spirit",
   "color": "#a85a1e",
-  "bottle": "round",
+  "bottle": "pear",
   "family": "brandy",
   "aliases": [
    "brandy"
@@ -127,6 +133,7 @@
   "name": "Pisco",
   "category": "spirit",
   "color": "#eeece0",
+  "bottle": "long-neck",
   "family": "brandy",
   "specialty": true
  },
@@ -135,6 +142,7 @@
   "name": "Absinthe",
   "category": "spirit",
   "color": "#9cc35a",
+  "bottle": "long-neck",
   "specialty": true,
   "aliases": [
    "pastis"
@@ -145,6 +153,7 @@
   "name": "Fireball",
   "category": "liqueur",
   "color": "#c2481e",
+  "bottle": "sloped",
   "family": "cinnamon",
   "substitutes": [
    "cinnamon-schnapps"
@@ -158,6 +167,7 @@
   "name": "Campari",
   "category": "liqueur",
   "color": "#c8102e",
+  "bottle": "long-neck",
   "family": "bitter-aperitivo"
  },
  {
@@ -172,6 +182,7 @@
   "name": "Green Chartreuse",
   "category": "liqueur",
   "color": "#7fb83a",
+  "bottle": "onion",
   "family": "chartreuse",
   "specialty": true
  },
@@ -180,6 +191,7 @@
   "name": "Yellow Chartreuse",
   "category": "liqueur",
   "color": "#e8cf3a",
+  "bottle": "onion",
   "family": "chartreuse",
   "specialty": true
  },
@@ -188,6 +200,8 @@
   "name": "Maraschino liqueur",
   "category": "liqueur",
   "color": "#eaece4",
+  "bottle": "straw",
+  "glass": "#2f6a3a",
   "specialty": true,
   "aliases": [
    "luxardo"
@@ -198,6 +212,7 @@
   "name": "Crème de violette",
   "category": "liqueur",
   "color": "#7a4d9a",
+  "bottle": "long-neck",
   "specialty": true,
   "aliases": [
    "violette"
@@ -208,6 +223,8 @@
   "name": "Cointreau",
   "category": "liqueur",
   "color": "#eeeee6",
+  "bottle": "square",
+  "glass": "#c8782e",
   "family": "orange-liqueur",
   "substitutes": [
    "orange-curacao"
@@ -235,6 +252,7 @@
   "name": "Blue curaçao",
   "category": "liqueur",
   "color": "#1e8fd0",
+  "bottle": "tall",
   "family": "orange-liqueur",
   "aliases": [
    "blue curacao"
@@ -245,6 +263,7 @@
   "name": "Bénédictine",
   "category": "liqueur",
   "color": "#c9902e",
+  "bottle": "squat",
   "specialty": true
  },
  {
@@ -252,6 +271,7 @@
   "name": "Amaro Nonino",
   "category": "liqueur",
   "color": "#b8662a",
+  "bottle": "pear",
   "family": "amaro",
   "specialty": true
  },
@@ -260,6 +280,8 @@
   "name": "Fernet-Branca",
   "category": "liqueur",
   "color": "#3a2a1e",
+  "bottle": "long-neck",
+  "glass": "#4a4030",
   "family": "amaro",
   "specialty": true,
   "aliases": [
@@ -282,6 +304,7 @@
   "name": "Suze",
   "category": "liqueur",
   "color": "#e8d03a",
+  "bottle": "tall",
   "family": "gentian",
   "specialty": true,
   "aliases": [
@@ -301,7 +324,8 @@
   "id": "amaretto",
   "name": "Amaretto",
   "category": "liqueur",
-  "color": "#b8621e"
+  "color": "#b8621e",
+  "bottle": "square-cap"
  },
  {
   "id": "velvet-falernum",
@@ -347,7 +371,8 @@
   "id": "limoncello",
   "name": "Limoncello",
   "category": "liqueur",
-  "color": "#f2e23a"
+  "color": "#f2e23a",
+  "bottle": "long-neck"
  },
  {
   "id": "cinnamon-schnapps",
@@ -389,6 +414,7 @@
   "name": "Sweet vermouth",
   "category": "fortified-wine",
   "color": "#7a2a1a",
+  "glass": "#5a3a2a",
   "family": "vermouth",
   "shelfLifeDays": 42,
   "aliases": [
@@ -457,6 +483,7 @@
   "name": "Ruby port",
   "category": "fortified-wine",
   "color": "#6a0e22",
+  "glass": "#3a2020",
   "family": "port",
   "shelfLifeDays": 30,
   "aliases": [
@@ -468,6 +495,8 @@
   "name": "Prosecco",
   "category": "wine",
   "color": "#f2e8a8",
+  "bottle": "champagne",
+  "glass": "#4a7a3a",
   "family": "sparkling",
   "substitutes": [
    "champagne"
@@ -479,6 +508,8 @@
   "name": "Champagne",
   "category": "wine",
   "color": "#f0dc8a",
+  "bottle": "champagne",
+  "glass": "#2a5a32",
   "family": "sparkling",
   "substitutes": [
    "prosecco"
@@ -494,6 +525,7 @@
   "name": "Angostura bitters",
   "category": "bitters",
   "color": "#6a1a10",
+  "bottle": "wrapped",
   "aliases": [
    "aromatic bitters"
   ]
@@ -667,6 +699,7 @@
   "name": "Egg white",
   "category": "fresh",
   "color": "#f2eedc",
+  "bottle": "egg",
   "shelfLifeDays": 3,
   "staple": true,
   "aliases": [
@@ -772,6 +805,7 @@
   "name": "Soda water",
   "category": "mixer",
   "color": "#e4eef2",
+  "bottle": "siphon",
   "staple": true,
   "aliases": [
    "club soda",
@@ -798,6 +832,8 @@
   "name": "Cola",
   "category": "mixer",
   "color": "#3a1a0e",
+  "bottle": "contour",
+  "glass": "#8ac0a8",
   "aliases": [
    "coke"
   ]
