@@ -51,6 +51,9 @@ button.card:hover{border-color:var(--muted)}
 .art .surface{stroke:#000;stroke-opacity:.18;stroke-width:1}
 .art .ice{fill:#fff;fill-opacity:.35;stroke:#fff;stroke-opacity:.8;stroke-width:.8}
 .art .bubbles{fill:#fff;fill-opacity:.75}
+.art .cap{fill:var(--muted);fill-opacity:.7}
+.art .tag{fill:var(--surface);fill-opacity:.4;stroke:var(--muted);stroke-width:.9}
+.art.empty .glass-line{stroke-dasharray:2.5 2}
 .hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center}
 .hint{margin:0;font-size:14px;padding:8px 12px;border-left:3px solid var(--accent);background:var(--sunk);border-radius:0 8px 8px 0}
 .card .why{margin:0;padding-left:16px;font-size:13px;color:var(--muted)}
@@ -84,8 +87,10 @@ button.card:hover{border-color:var(--muted)}
 .have-btn:hover{border-color:var(--accent);color:var(--accent)}
 .have-btn[data-armed]{border-style:solid;border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
 .steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
-.bottle{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.bottle{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
 .bottle:first-of-type{border-top:0}
+.bottle .who{display:block;width:100%;border:0;padding:4px 0;background:none;text-align:left;font-weight:600;color:var(--ink)}
+.bottle .who:hover{color:var(--accent)}
 .bottle .meta{font-size:12px;color:var(--muted)}
 .bottle .meta.hot{color:var(--sub);font-weight:600}
 .level{width:54px;height:6px;border-radius:3px;background:var(--sunk);overflow:hidden;display:inline-block;vertical-align:middle}
@@ -291,6 +296,40 @@ function drinkArt(r, size = 40) {
     <path d="${g.bowl}${g.rest ? ' ' + g.rest : ''}" class="glass-line"/>
   </svg>`;
 }
+/* ---------- Bottle pictures ----------
+   Each bottle in My bar is drawn in the same style as the drinks: an outline filled with what's inside (the
+   ingredient's `color`), up to how much is left. The shape comes from the ingredient's `bottle`, or its category. */
+const BOTTLE = {
+  // body: the part that holds the liquid (neck included); top: the surface when full; cap: drawn solid; tag: a paper label
+  tall: { body: 'M21 6H27V12Q27 14 30 15Q33 16 33 19V48Q33 50 31 50H17Q15 50 15 48V19Q15 16 18 15Q21 14 21 12Z', top: 19, cap: 'M20.5 2.5H27.5V6.5H20.5Z' },
+  round: { body: 'M21.5 6H26.5V13Q26.5 16 30.5 18.5Q34 21 34 25V48Q34 50 32 50H16Q14 50 14 48V25Q14 21 17.5 18.5Q21.5 16 21.5 13Z', top: 24, cap: 'M21 2.5H27V6.5H21Z' },
+  squat: { body: 'M21 10H27V15Q27 17 31 18Q37 19 37 23V48Q37 50 35 50H13Q11 50 11 48V23Q11 19 17 18Q21 17 21 15Z', top: 23, cap: 'M20 5.5H28V10.5H20Z' },
+  wine: { body: 'M21.5 9H26.5V14Q26.5 19 30 22Q32 24 32 28V48Q32 50 30 50H18Q16 50 16 48V28Q16 24 18 22Q21.5 19 21.5 14Z', top: 28, cap: 'M21.2 2.5H26.8V10H21.2Z' },
+  dasher: { body: 'M22 14H26V18Q26 20 29 21.5Q31 23 31 26V48Q31 50 29 50H19Q17 50 17 48V26Q17 23 19 21.5Q22 20 22 18Z', top: 26, cap: 'M21.5 9H26.5V14.5H21.5Z', tag: 'M15.5 29H32.5V44H15.5Z' },
+  flask: { body: 'M20 12H28V16Q35 18 35 26V48Q35 50 33 50H15Q13 50 13 48V26Q13 18 20 16Z', top: 26, cap: 'M19.5 8H28.5V12H19.5Z', rest: 'M19.5 10Q16 13 19 17M28.5 10Q32 13 29 17' },
+  jug: { body: 'M15 8H31L30 14Q35 22 35 34V48Q35 50 33 50H15Q13 50 13 48V34Q13 22 18 14Z', top: 20, rest: 'M33.5 19Q40 21 39.5 30Q39 36 35 38.5M15 8L12.5 6' },
+  jar: { body: 'M14 15H34V48Q34 50 32 50H16Q14 50 14 48Z', top: 18, cap: 'M13 10H35V15H13Z' },
+  soda: { body: 'M22 6H26V10Q26 13 28 16Q30 19 30 23V48Q30 50 28 50H20Q18 50 18 48V23Q18 19 20 16Q22 13 22 10Z', top: 23, cap: 'M21.5 3H26.5V6.5H21.5Z' }
+};
+const BOTTLE_FOR = { spirit: 'tall', liqueur: 'round', 'fortified-wine': 'wine', wine: 'wine', bitters: 'dasher', syrup: 'flask', juice: 'jug', fresh: 'jar', pantry: 'jar', mixer: 'soda' };
+function bottleArt(b, size = 40) {
+  const i = C.ing.get(b.ingredient) || {}, g = BOTTLE[i.bottle] || BOTTLE[BOTTLE_FOR[i.category]] || BOTTLE.round, n = 'ba' + (++artN);
+  const level = b.level == null ? 1 : Math.min(1, Math.max(0, b.level)), base = 50, y = base - (base - g.top) * level;
+  const fizzy = i.category === 'mixer' && i.id !== 'cola' || i.family === 'sparkling';
+  const bubbles = fizzy && level > 0.2 ? [[20, 0.75], [27, 0.45], [23, 0.2], [25, 0.85]].map(([x, f]) => `<circle cx="${x}" cy="${y + (base - y) * f}" r="1"/>`).join('') : '';
+  return `<svg class="art${level ? '' : ' empty'}" viewBox="0 0 48 52" width="${size}" height="${Math.round(size * 52 / 48)}" aria-hidden="true" focusable="false">
+    <defs><clipPath id="${n}c"><path d="${g.body}"/></clipPath></defs>
+    <path d="${g.body}" class="glass-fill"/>
+    <g clip-path="url(#${n}c)">
+      ${level ? `<rect x="0" y="${y}" width="48" height="${base - y + 2}" fill="${i.color || '#d9a560'}" class="liquid"/>` : ''}
+      <g class="bubbles">${bubbles}</g>
+      ${level && level < 1 ? `<line x1="0" x2="48" y1="${y}" y2="${y}" class="surface"/>` : ''}
+    </g>
+    ${g.tag ? `<path d="${g.tag}" class="tag"/>` : ''}
+    ${g.cap ? `<path d="${g.cap}" class="cap"/>` : ''}
+    <path d="${g.body}${g.rest ? ' ' + g.rest : ''}" class="glass-line"/>
+  </svg>`;
+}
 const ICE = { cubes: 'on ice', large: 'on a large cube', crushed: 'on crushed ice' };
 const methodLine = r => { const m = Mix.methodHint(C, r); return `<span title="${esc(m.why)}">${esc(m.label)}</span> · ${esc(C.glasses.get(r.glass) || r.glass)}`; };
 function dots(a) {
@@ -413,7 +452,7 @@ function barView() {
   return `<div class="stack">
     <div class="add"><label class="sr-only" for="addIn">Add a bottle</label><input type="search" id="addIn" placeholder="Add a bottle: gin, Campari, falernum…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="suggest"><div class="suggest" id="suggest" role="listbox" hidden></div></div>
     ${doc.bottles.length ? '' : '<p class="empty">Your bar is empty. Add what you have, opened or not. Mark the bottles you want gone as <b>Use it up</b>, and the precious ones as <b>Save it</b>.</p>'}
-    ${order.map(c => `<section class="stack"><h3>${esc(CAT_NAMES[c])}</h3><div class="panel">${groups.get(c).map(b => { const m = bottleMeta(b); return `<div class="bottle"><button class="btn ghost" style="border:0;padding:0;text-align:left;font-weight:600" type="button" data-bottle="${b.id}">${esc(b.label || ingName(b.ingredient))}${b.label ? ` <span class="muted small">${esc(ingName(b.ingredient))}</span>` : ''}${m.text ? `<div class="meta${m.hot ? ' hot' : ''}">${esc(m.text)}</div>` : ''}</button><span class="level" title="${esc(levelName(b.level))}"><i style="width:${Math.round((b.level == null ? 1 : b.level) * 100)}%"></i></span></div>`; }).join('')}</div></section>`).join('')}
+    ${order.map(c => `<section class="stack"><h3>${esc(CAT_NAMES[c])}</h3><div class="panel">${groups.get(c).map(b => { const m = bottleMeta(b); return `<div class="bottle">${bottleArt(b, 36)}<button class="who" type="button" data-bottle="${b.id}">${esc(b.label || ingName(b.ingredient))}${b.label ? ` <span class="muted small">${esc(ingName(b.ingredient))}</span>` : ''}${m.text ? `<div class="meta${m.hot ? ' hot' : ''}">${esc(m.text)}</div>` : ''}</button><span class="level" title="${esc(levelName(b.level))}"><i style="width:${Math.round((b.level == null ? 1 : b.level) * 100)}%"></i></span></div>`; }).join('')}</div></section>`).join('')}
   </div>`;
 }
 const levelName = l => (LEVELS.find(x => x[0] === (l == null ? 1 : l)) || [0, Math.round((l || 0) * 100) + '% left'])[1];
@@ -448,7 +487,7 @@ function openBottle(id) {
   const i = C.ing.get(b.ingredient) || {}, u = Mix.urgency(C, b, Date.now());
   const n = C.uses.get(b.ingredient) || 0;
   openDrawer(b.label || i.name || b.ingredient, `
-    <p class="small muted">${esc(i.name)}${i.shelfLifeDays ? ` · keeps about ${i.shelfLifeDays} days once opened` : ''} · used in ${n} recipe${n === 1 ? '' : 's'} here</p>
+    <div class="hero">${bottleArt(b, 56)}<p class="small muted" style="margin:0">${esc(i.name)}${i.shelfLifeDays ? ` · keeps about ${i.shelfLifeDays} days once opened` : ''} · used in ${n} recipe${n === 1 ? '' : 's'} here<br>${esc(levelName(b.level))}</p></div>
     <label class="field">Brand or label<input type="text" id="bLabel" value="${esc(b.label || '')}" placeholder="e.g. Dolin, Luxardo"></label>
     <label class="field">Opened<input type="date" id="bOpened" value="${esc(b.openedAt || '')}" max="${today()}"></label>
     <div class="row"><button class="btn sm" type="button" id="bToday">Opened today</button>${b.openedAt ? '<button class="btn sm ghost" type="button" id="bSealed">Still sealed</button>' : ''}</div>

@@ -27,6 +27,11 @@ two, bottom first, for a gradient), `float` (foam, cream or crema on top), `ice`
 built, and why, from the method and what goes in: citrus, juice, cream, coffee and egg get shaken, drinks without
 them get stirred so they stay clear and silky, and bubbles never go in the shaker.
 
+In **My bar**, each bottle is drawn the same way: its shape (`bottle` on the ingredient, or the usual one for its
+category: tall for spirits, round for liqueurs, a wine bottle for vermouth, a dasher for bitters, a flask for syrups,
+a jug for juices, a jar for fresh and pantry things, a soda bottle for mixers) filled with its `color` up to how much
+is left.
+
 ## How recommendations work
 
 All of it is in [`mix.js`](mix.js), with tests in [`scripts/mix.test.js`](scripts/mix.test.js).

@@ -36,6 +36,12 @@ Copy an entry in `data/ingredients.json` and change it. A few fields matter for 
 - `staple`: `true` for things most people have or can grab on the way home.
 - `aliases`: other names people search by, in lowercase.
 
+Two more only change its picture in My bar:
+
+- `color`: the colour of what's inside, as `#rrggbb`.
+- `bottle`: its shape, when the usual one for its category doesn't fit: `tall`, `round`, `squat`, `wine`, `dasher`,
+  `flask`, `jug`, `jar` or `soda`.
+
 ## Something the app has to treat differently
 
 A new kind of entry that changes how the app behaves (a new unit, a new method) needs a code change as well as the
