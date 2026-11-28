@@ -3,6 +3,7 @@
   "id": "london-dry-gin",
   "name": "London dry gin",
   "category": "spirit",
+  "color": "#e3edf0",
   "family": "gin",
   "aliases": [
    "gin"
@@ -11,12 +12,15 @@
  {
   "id": "vodka",
   "name": "Vodka",
-  "category": "spirit"
+  "category": "spirit",
+  "color": "#e6ecf0"
  },
  {
   "id": "bourbon",
   "name": "Bourbon",
   "category": "spirit",
+  "color": "#c8782e",
+  "bottle": "squat",
   "family": "whiskey",
   "substitutes": [
    "rye-whiskey"
@@ -26,6 +30,8 @@
   "id": "rye-whiskey",
   "name": "Rye whiskey",
   "category": "spirit",
+  "color": "#b9692a",
+  "bottle": "squat",
   "family": "whiskey",
   "substitutes": [
    "bourbon"
@@ -38,12 +44,15 @@
   "id": "irish-whiskey",
   "name": "Irish whiskey",
   "category": "spirit",
+  "color": "#d69a45",
+  "bottle": "squat",
   "family": "whiskey"
  },
  {
   "id": "white-rum",
   "name": "White rum",
   "category": "spirit",
+  "color": "#eceee8",
   "family": "rum",
   "aliases": [
    "light rum"
@@ -53,6 +62,8 @@
   "id": "aged-rum",
   "name": "Aged Jamaican rum",
   "category": "spirit",
+  "color": "#9a5a22",
+  "bottle": "round",
   "family": "rum",
   "aliases": [
    "dark rum",
@@ -63,6 +74,8 @@
   "id": "blackstrap-rum",
   "name": "Blackstrap rum",
   "category": "spirit",
+  "color": "#3a1c0e",
+  "bottle": "round",
   "family": "rum",
   "substitutes": [
    "aged-rum"
@@ -73,6 +86,7 @@
   "id": "tequila-blanco",
   "name": "Tequila blanco",
   "category": "spirit",
+  "color": "#eceedf",
   "family": "agave",
   "aliases": [
    "tequila"
@@ -82,12 +96,15 @@
   "id": "mezcal",
   "name": "Mezcal",
   "category": "spirit",
+  "color": "#e9e2c0",
   "family": "agave"
  },
  {
   "id": "cognac",
   "name": "Cognac",
   "category": "spirit",
+  "color": "#a85a1e",
+  "bottle": "round",
   "family": "brandy",
   "aliases": [
    "brandy"
@@ -97,6 +114,8 @@
   "id": "calvados",
   "name": "Calvados",
   "category": "spirit",
+  "color": "#c98a3a",
+  "bottle": "round",
   "family": "brandy",
   "specialty": true,
   "aliases": [
@@ -107,6 +126,7 @@
   "id": "pisco",
   "name": "Pisco",
   "category": "spirit",
+  "color": "#eeece0",
   "family": "brandy",
   "specialty": true
  },
@@ -114,6 +134,7 @@
   "id": "absinthe",
   "name": "Absinthe",
   "category": "spirit",
+  "color": "#9cc35a",
   "specialty": true,
   "aliases": [
    "pastis"
@@ -123,6 +144,7 @@
   "id": "fireball",
   "name": "Fireball",
   "category": "liqueur",
+  "color": "#c2481e",
   "family": "cinnamon",
   "substitutes": [
    "cinnamon-schnapps"
@@ -135,18 +157,21 @@
   "id": "campari",
   "name": "Campari",
   "category": "liqueur",
+  "color": "#c8102e",
   "family": "bitter-aperitivo"
  },
  {
   "id": "aperol",
   "name": "Aperol",
   "category": "liqueur",
+  "color": "#f2581e",
   "family": "bitter-aperitivo"
  },
  {
   "id": "green-chartreuse",
   "name": "Green Chartreuse",
   "category": "liqueur",
+  "color": "#7fb83a",
   "family": "chartreuse",
   "specialty": true
  },
@@ -154,6 +179,7 @@
   "id": "yellow-chartreuse",
   "name": "Yellow Chartreuse",
   "category": "liqueur",
+  "color": "#e8cf3a",
   "family": "chartreuse",
   "specialty": true
  },
@@ -161,6 +187,7 @@
   "id": "maraschino",
   "name": "Maraschino liqueur",
   "category": "liqueur",
+  "color": "#eaece4",
   "specialty": true,
   "aliases": [
    "luxardo"
@@ -170,6 +197,7 @@
   "id": "creme-de-violette",
   "name": "Crème de violette",
   "category": "liqueur",
+  "color": "#7a4d9a",
   "specialty": true,
   "aliases": [
    "violette"
@@ -179,6 +207,7 @@
   "id": "cointreau",
   "name": "Cointreau",
   "category": "liqueur",
+  "color": "#eeeee6",
   "family": "orange-liqueur",
   "substitutes": [
    "orange-curacao"
@@ -191,6 +220,7 @@
   "id": "orange-curacao",
   "name": "Orange curaçao",
   "category": "liqueur",
+  "color": "#e07a1e",
   "family": "orange-liqueur",
   "substitutes": [
    "cointreau"
@@ -204,6 +234,7 @@
   "id": "blue-curacao",
   "name": "Blue curaçao",
   "category": "liqueur",
+  "color": "#1e8fd0",
   "family": "orange-liqueur",
   "aliases": [
    "blue curacao"
@@ -213,12 +244,14 @@
   "id": "benedictine",
   "name": "Bénédictine",
   "category": "liqueur",
+  "color": "#c9902e",
   "specialty": true
  },
  {
   "id": "amaro-nonino",
   "name": "Amaro Nonino",
   "category": "liqueur",
+  "color": "#b8662a",
   "family": "amaro",
   "specialty": true
  },
@@ -226,6 +259,7 @@
   "id": "fernet-branca",
   "name": "Fernet-Branca",
   "category": "liqueur",
+  "color": "#3a2a1e",
   "family": "amaro",
   "specialty": true,
   "aliases": [
@@ -236,6 +270,7 @@
   "id": "amer-picon",
   "name": "Amer Picon",
   "category": "liqueur",
+  "color": "#a8461e",
   "family": "amaro",
   "specialty": true,
   "aliases": [
@@ -246,6 +281,7 @@
   "id": "suze",
   "name": "Suze",
   "category": "liqueur",
+  "color": "#e8d03a",
   "family": "gentian",
   "specialty": true,
   "aliases": [
@@ -256,6 +292,7 @@
   "id": "coffee-liqueur",
   "name": "Coffee liqueur",
   "category": "liqueur",
+  "color": "#2e1a10",
   "aliases": [
    "kahlua"
   ]
@@ -263,12 +300,14 @@
  {
   "id": "amaretto",
   "name": "Amaretto",
-  "category": "liqueur"
+  "category": "liqueur",
+  "color": "#b8621e"
  },
  {
   "id": "velvet-falernum",
   "name": "Velvet falernum",
   "category": "liqueur",
+  "color": "#ebdfbc",
   "specialty": true,
   "aliases": [
    "falernum"
@@ -278,6 +317,7 @@
   "id": "midori",
   "name": "Midori",
   "category": "liqueur",
+  "color": "#5ec43a",
   "specialty": true,
   "aliases": [
    "melon liqueur"
@@ -287,6 +327,7 @@
   "id": "creme-de-menthe",
   "name": "Crème de menthe",
   "category": "liqueur",
+  "color": "#3aaa5a",
   "specialty": true,
   "aliases": [
    "peppermint liqueur"
@@ -296,6 +337,7 @@
   "id": "creme-de-cacao",
   "name": "Crème de cacao",
   "category": "liqueur",
+  "color": "#ede3cc",
   "aliases": [
    "cacao liqueur",
    "chocolate liqueur"
@@ -304,12 +346,14 @@
  {
   "id": "limoncello",
   "name": "Limoncello",
-  "category": "liqueur"
+  "category": "liqueur",
+  "color": "#f2e23a"
  },
  {
   "id": "cinnamon-schnapps",
   "name": "Cinnamon schnapps",
   "category": "liqueur",
+  "color": "#ede2bc",
   "family": "cinnamon",
   "substitutes": [
    "fireball"
@@ -324,6 +368,7 @@
   "id": "sour-apple-schnapps",
   "name": "Sour apple schnapps",
   "category": "liqueur",
+  "color": "#9ad83a",
   "specialty": true,
   "aliases": [
    "apple pucker",
@@ -334,6 +379,7 @@
   "id": "peach-schnapps",
   "name": "Peach schnapps",
   "category": "liqueur",
+  "color": "#f2c48a",
   "aliases": [
    "peach liqueur"
   ]
@@ -342,6 +388,7 @@
   "id": "sweet-vermouth",
   "name": "Sweet vermouth",
   "category": "fortified-wine",
+  "color": "#7a2a1a",
   "family": "vermouth",
   "shelfLifeDays": 42,
   "aliases": [
@@ -353,6 +400,7 @@
   "id": "dry-vermouth",
   "name": "Dry vermouth",
   "category": "fortified-wine",
+  "color": "#e9e7c0",
   "family": "vermouth",
   "substitutes": [
    "blanc-vermouth"
@@ -366,6 +414,7 @@
   "id": "blanc-vermouth",
   "name": "Blanc vermouth",
   "category": "fortified-wine",
+  "color": "#eee2b4",
   "family": "vermouth",
   "substitutes": [
    "lillet-blanc",
@@ -380,6 +429,7 @@
   "id": "lillet-blanc",
   "name": "Lillet blanc",
   "category": "fortified-wine",
+  "color": "#f0d88a",
   "family": "aromatised-wine",
   "substitutes": [
    "blanc-vermouth"
@@ -394,6 +444,7 @@
   "id": "fino-sherry",
   "name": "Fino sherry",
   "category": "fortified-wine",
+  "color": "#ecdc9a",
   "family": "sherry",
   "shelfLifeDays": 14,
   "aliases": [
@@ -405,6 +456,7 @@
   "id": "ruby-port",
   "name": "Ruby port",
   "category": "fortified-wine",
+  "color": "#6a0e22",
   "family": "port",
   "shelfLifeDays": 30,
   "aliases": [
@@ -415,6 +467,7 @@
   "id": "prosecco",
   "name": "Prosecco",
   "category": "wine",
+  "color": "#f2e8a8",
   "family": "sparkling",
   "substitutes": [
    "champagne"
@@ -425,6 +478,7 @@
   "id": "champagne",
   "name": "Champagne",
   "category": "wine",
+  "color": "#f0dc8a",
   "family": "sparkling",
   "substitutes": [
    "prosecco"
@@ -439,6 +493,7 @@
   "id": "angostura",
   "name": "Angostura bitters",
   "category": "bitters",
+  "color": "#6a1a10",
   "aliases": [
    "aromatic bitters"
   ]
@@ -447,17 +502,20 @@
   "id": "peychauds",
   "name": "Peychaud's bitters",
   "category": "bitters",
+  "color": "#c8202e",
   "specialty": true
  },
  {
   "id": "orange-bitters",
   "name": "Orange bitters",
-  "category": "bitters"
+  "category": "bitters",
+  "color": "#d8781e"
  },
  {
   "id": "simple-syrup",
   "name": "Simple syrup",
   "category": "syrup",
+  "color": "#eeeee4",
   "family": "sugar",
   "substitutes": [
    "demerara-syrup"
@@ -472,6 +530,7 @@
   "id": "demerara-syrup",
   "name": "Demerara syrup",
   "category": "syrup",
+  "color": "#c8862e",
   "family": "sugar",
   "substitutes": [
    "simple-syrup"
@@ -482,6 +541,7 @@
   "id": "honey-syrup",
   "name": "Honey syrup",
   "category": "syrup",
+  "color": "#e8a830",
   "family": "sugar",
   "shelfLifeDays": 60
  },
@@ -489,6 +549,7 @@
   "id": "agave-syrup",
   "name": "Agave syrup",
   "category": "syrup",
+  "color": "#e0b04a",
   "family": "sugar",
   "substitutes": [
    "simple-syrup"
@@ -498,6 +559,7 @@
   "id": "orgeat",
   "name": "Orgeat",
   "category": "syrup",
+  "color": "#f0e6d0",
   "shelfLifeDays": 60,
   "specialty": true,
   "aliases": [
@@ -508,18 +570,21 @@
   "id": "grenadine",
   "name": "Grenadine",
   "category": "syrup",
+  "color": "#b0102a",
   "shelfLifeDays": 90
  },
  {
   "id": "raspberry-syrup",
   "name": "Raspberry syrup",
   "category": "syrup",
+  "color": "#b8204a",
   "shelfLifeDays": 14
  },
  {
   "id": "lime-juice",
   "name": "Lime juice",
   "category": "juice",
+  "color": "#d4e48a",
   "family": "citrus",
   "shelfLifeDays": 2,
   "staple": true,
@@ -531,6 +596,7 @@
   "id": "lemon-juice",
   "name": "Lemon juice",
   "category": "juice",
+  "color": "#f2e68a",
   "family": "citrus",
   "shelfLifeDays": 2,
   "staple": true,
@@ -542,12 +608,14 @@
   "id": "pineapple-juice",
   "name": "Pineapple juice",
   "category": "juice",
+  "color": "#f5d050",
   "shelfLifeDays": 5
  },
  {
   "id": "orange-juice",
   "name": "Orange juice",
   "category": "juice",
+  "color": "#f5a020",
   "shelfLifeDays": 7,
   "aliases": [
    "oj"
@@ -557,6 +625,7 @@
   "id": "cranberry-juice",
   "name": "Cranberry juice",
   "category": "juice",
+  "color": "#b8183a",
   "shelfLifeDays": 14,
   "aliases": [
    "cranberry"
@@ -566,6 +635,8 @@
   "id": "espresso",
   "name": "Espresso",
   "category": "fresh",
+  "color": "#3a2010",
+  "bottle": "jug",
   "family": "coffee",
   "substitutes": [
    "hot-coffee"
@@ -580,6 +651,8 @@
   "id": "hot-coffee",
   "name": "Hot coffee",
   "category": "fresh",
+  "color": "#4a2a14",
+  "bottle": "jug",
   "family": "coffee",
   "shelfLifeDays": 1,
   "staple": true,
@@ -593,6 +666,7 @@
   "id": "egg-white",
   "name": "Egg white",
   "category": "fresh",
+  "color": "#f2eedc",
   "shelfLifeDays": 3,
   "staple": true,
   "aliases": [
@@ -603,6 +677,8 @@
   "id": "cream",
   "name": "Cream",
   "category": "fresh",
+  "color": "#f6f1e4",
+  "bottle": "jug",
   "shelfLifeDays": 7,
   "aliases": [
    "heavy cream",
@@ -613,18 +689,21 @@
   "id": "orange-peel",
   "name": "Orange peel",
   "category": "fresh",
+  "color": "#f08a1e",
   "staple": true
  },
  {
   "id": "lemon-peel",
   "name": "Lemon peel",
   "category": "fresh",
+  "color": "#f2d83a",
   "staple": true
  },
  {
   "id": "cocktail-cherry",
   "name": "Cocktail cherry",
   "category": "pantry",
+  "color": "#7a0a1e",
   "aliases": [
    "maraschino cherry",
    "luxardo cherry"
@@ -634,6 +713,7 @@
   "id": "olive",
   "name": "Olive",
   "category": "pantry",
+  "color": "#8a9a3a",
   "aliases": [
    "olives",
    "cocktail olive",
@@ -644,6 +724,7 @@
   "id": "olive-brine",
   "name": "Olive brine",
   "category": "pantry",
+  "color": "#c8c89a",
   "shelfLifeDays": 30,
   "aliases": [
    "olive juice"
@@ -653,6 +734,7 @@
   "id": "pickle-juice",
   "name": "Pickle juice",
   "category": "pantry",
+  "color": "#d8d890",
   "shelfLifeDays": 60,
   "aliases": [
    "pickle brine",
@@ -663,6 +745,7 @@
   "id": "pickle",
   "name": "Pickle",
   "category": "pantry",
+  "color": "#7a8a30",
   "aliases": [
    "pickles",
    "cornichon",
@@ -673,6 +756,7 @@
   "id": "mint",
   "name": "Mint",
   "category": "fresh",
+  "color": "#4a9a3a",
   "shelfLifeDays": 5,
   "staple": true
  },
@@ -680,12 +764,14 @@
   "id": "salt",
   "name": "Salt",
   "category": "pantry",
+  "color": "#f2f2f2",
   "staple": true
  },
  {
   "id": "soda-water",
   "name": "Soda water",
   "category": "mixer",
+  "color": "#e4eef2",
   "staple": true,
   "aliases": [
    "club soda",
@@ -696,6 +782,7 @@
   "id": "tonic-water",
   "name": "Tonic water",
   "category": "mixer",
+  "color": "#eaf0e6",
   "aliases": [
    "tonic"
   ]
@@ -703,12 +790,14 @@
  {
   "id": "ginger-ale",
   "name": "Ginger ale",
-  "category": "mixer"
+  "category": "mixer",
+  "color": "#e8c870"
  },
  {
   "id": "cola",
   "name": "Cola",
   "category": "mixer",
+  "color": "#3a1a0e",
   "aliases": [
    "coke"
   ]
@@ -717,6 +806,7 @@
   "id": "lemon-lime-soda",
   "name": "Lemon-lime soda",
   "category": "mixer",
+  "color": "#ecf2dc",
   "aliases": [
    "sprite",
    "7up",
