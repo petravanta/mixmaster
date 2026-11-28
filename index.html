@@ -37,6 +37,13 @@ nav.tabs .save-state{margin-left:auto;padding-left:12px;min-width:0;overflow:hid
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .icon-btn{background:none;border:1px solid var(--line);border-radius:999px;width:34px;height:34px;display:inline-grid;place-items:center;color:var(--muted)}
 .icon-btn svg{width:18px;height:18px}
+button.save-state{background:none;border:0;padding:0;cursor:pointer;text-align:left}
+button.save-state:hover{color:var(--ink)}
+.settings{max-width:640px}
+.settings section{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+button.save-state b{color:var(--accent);font-weight:600}
+/* Phones: four tabs fill the row, so the status shrinks to its coloured dot (the text stays as its label) */
+@media (max-width:640px){nav.tabs button.save-state{font-size:0;gap:0;padding:12px 4px 12px 10px;flex:none}}
 .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:8px;text-align:left;width:100%}
@@ -124,13 +131,14 @@ a{color:var(--accent)}
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6h24L18 17.5V25h5v2.5H9V25h5v-7.5z" fill="var(--accent)"/><circle cx="22.5" cy="9.5" r="2.6" fill="var(--bg)"/></svg>
         <span class="word">Mixmaster</span>
       </div>
-      <span class="top-end"><span data-theme-switch></span><button class="icon-btn" type="button" id="settingsBtn" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></button></span>
+      <span class="top-end"><span data-theme-switch></span></span>
     </div>
     <nav class="tabs" id="tabs" aria-label="Sections">
       <button type="button" data-tab="tonight">Tonight</button>
       <button type="button" data-tab="recipes">Recipes</button>
       <button type="button" data-tab="bar">My bar</button>
-      <span class="save-state" id="saveState" role="status">Saved in this browser</span>
+      <button type="button" data-tab="settings">Settings</button>
+      <button type="button" class="save-state" id="saveState" aria-live="polite" title="Google Drive sync">Saved in this browser</button>
     </nav>
   </div>
 </header>
@@ -246,7 +254,7 @@ function oz(ml) {
 }
 
 /* ---------- Rendering ---------- */
-let tab = ['tonight', 'recipes', 'bar'].includes(lsGet(TAB_KEY)) ? lsGet(TAB_KEY) : 'tonight';
+let tab = ['tonight', 'recipes', 'bar', 'settings'].includes(lsGet(TAB_KEY)) ? lsGet(TAB_KEY) : 'tonight';
 let query = '', filter = 'all';
 function setTab(t) {
   tab = t; lsSet(TAB_KEY, t);
@@ -258,6 +266,7 @@ function render() {
   const m = $('#main');
   if (tab === 'tonight') m.innerHTML = tonight();
   else if (tab === 'recipes') { m.innerHTML = recipesView(); wireRecipes(); }
+  else if (tab === 'settings') { m.innerHTML = settingsView(); wireSettings(m); }
   else { m.innerHTML = barView(); wireBar(); }
 }
 /* ---------- Drink pictures ----------
@@ -551,7 +560,9 @@ function remoteIn(data) { doc = mergeDocs(doc, data); lsSet(KEY, doc); if (!$('#
 // problems only the person can fix (Drive full, permission refused) also get a banner over the page
 function showSaveState() {
   const el = $('#saveState'), p = store.known ? store.problem : null, text = store.known ? store.status() : '';
-  el.textContent = text || 'Saved in this browser';
+  if (store.configured && !store.known) el.innerHTML = 'Saved in this browser · <b>Connect Drive</b>';
+  else el.textContent = text || 'Saved in this browser';
+  el.setAttribute('aria-label', el.textContent); el.title = el.textContent;
   el.dataset.state = !store.known || !text ? 'local' : p ? p.kind : /^Saving/.test(text) ? 'saving' : store.live() ? 'ok' : 'local';
   const ban = $('#driveBanner'), stuck = p && (p.kind === 'full' || p.kind === 'denied');
   ban.hidden = !stuck;
@@ -562,23 +573,38 @@ function showSaveState() {
 function drivePanel() {
   if (!store.configured) return '<p class="small muted">Drive sync is turned off in this copy of the app.</p>';
   if (!store.known) return `<p class="small">Keep your bar in your own Google Drive, in <b>petravanta/Mixmaster/${esc(store.file)}</b>, and use it on your phone and computer. The app can only see files it created there.</p><div class="row"><button class="btn primary" type="button" data-drive="on">Connect Google Drive</button></div>`;
-  return `<p class="small">${esc(store.status())}. Everything goes to <b>petravanta/Mixmaster/${esc(store.file)}</b> in your Drive a moment after each change.</p>
-    <div class="row">${store.live() ? '' : '<button class="btn primary" type="button" data-drive="on">Reconnect</button>'}<button class="btn ghost" type="button" data-drive="off">Disconnect</button></div>`;
+  const who = driveAccount();
+  return `<p class="small">${who ? `Connected as <b>${esc(who)}</b>. ` : ''}${esc(store.status() || 'Connected')}. Everything goes to <b>petravanta/Mixmaster/${esc(store.file)}</b> in your Drive a moment after each change.</p>
+    <div class="row">${store.live() ? '<button class="btn" type="button" data-drive="sync">Sync now</button>' : '<button class="btn primary" type="button" data-drive="on">Reconnect</button>'}<button class="btn ghost" type="button" data-drive="off">Disconnect</button></div>
+    <p class="small muted">It uses the same Google account as your other petravanta apps. Disconnect forgets the sign-in on this browser only; your bar stays here and in Drive.</p>`;
+}
+// The Google account the Drive store connected with (drive-store keeps it under <key>.email)
+function driveAccount() { const e = lsGet('mixmaster.drive.email'); return typeof e === 'string' ? e : ''; }
+async function syncNow() {
+  try { if (await store.refresh()) remoteIn(store.data); store.save(doc); await store.flush(); toast('Synced with Google Drive'); }
+  catch (e) { toast('Couldn’t reach Google Drive just now.'); }
+  showSaveState(); refreshDrivePanel();
 }
 function wireDrive(el) {
   el.querySelectorAll('[data-drive]').forEach(b => b.onclick = async () => {
+    if (b.dataset.drive === 'sync') return syncNow();
     if (b.dataset.drive === 'off') { store.signOut(); showSaveState(); refreshDrivePanel(); return toast('Disconnected. Your bar stays in this browser.'); }
     try { const remote = await store.load(true); doc = mergeDocs(doc, remote); save(); render(); toast('Connected to Google Drive'); }
     catch (e) { toast(e && e.code === 'offline' ? 'You seem to be offline.' : 'Couldn’t connect to Google Drive.'); }
   });
 }
 function refreshDrivePanel() { const dp = $('#drivePanel'); if (dp) { dp.innerHTML = drivePanel(); wireDrive(dp); } }
-function settingsDrawer() {
+// Settings is a tab of its own. openSettings(true) comes from the sync status and puts the Drive controls in focus.
+function openSettings(toDrive) {
+  closeDrawer(); setTab('settings');
+  if (toDrive) { const f = $('#drivePanel button'); if (f) f.focus(); }
+}
+function settingsView() {
   const s = doc.settings;
-  openDrawer('Settings', `
+  return `<div class="settings stack"><h2>Settings</h2>
+    <section class="stack" id="stDrive"><h3>Google Drive</h3><div id="drivePanel">${drivePanel()}</div></section>
     <section class="stack"><h3>Measures</h3><div class="seg" id="stUnits"><button type="button" data-v="ml" aria-pressed="${s.units !== 'oz'}">ml</button><button type="button" data-v="oz" aria-pressed="${s.units === 'oz'}">oz</button></div></section>
     <section class="stack"><h3>Staples</h3><label class="check"><input type="checkbox" id="stStaples" ${s.assumeStaples !== false ? 'checked' : ''}><span>Assume I have the basics: citrus, simple syrup, soda, egg, mint and peels. Drinks that need them still say what to grab.</span></label></section>
-    <section class="stack"><h3>Google Drive</h3><div id="drivePanel">${drivePanel()}</div></section>
     <section class="stack"><h3>Backup and import</h3>
       <p class="small muted">A backup holds your bottles, favourites and what you made. Importing one merges it with what’s here.</p>
       <div class="row"><button class="btn" type="button" id="stExport">Export backup</button><button class="btn" type="button" id="stImport">Import…</button></div></section>
@@ -588,13 +614,14 @@ function settingsDrawer() {
         <dt>Then what needs using</dt><dd>Drinks get a boost for each bottle they pour that wants using: opened vermouth, sherry and wine near the end of their life, specialty bottles, ones only a few recipes use, nearly empty ones and anything you marked <b>Use it up</b>. The more of it a drink pours, the bigger the boost. Drinks that pour a bottle you’re saving drop down.</dd>
         <dt>And a little variety</dt><dd>Something you made in the last few days slips down a bit; favourites rise a little.</dd>
         <dt>One bottle away</dt><dd>The single bottles that would let you make the most new drinks, weighted by how much those drinks would use up.</dd>
-      </dl></section>`, d => {
+      </dl></section></div>`;
+}
+function wireSettings(d) {
     wireDrive(d.querySelector('#drivePanel'));
     d.querySelector('#stUnits').onclick = e => { const b = e.target.closest('[data-v]'); if (!b) return; setSetting('units', b.dataset.v); d.querySelectorAll('#stUnits [data-v]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); };
     d.querySelector('#stStaples').onchange = e => { setSetting('assumeStaples', e.target.checked); render(); };
     d.querySelector('#stExport').onclick = () => download(new Blob([JSON.stringify(doc, null, 1)], { type: 'application/json' }), `Mixmaster backup ${today()}.json`);
     d.querySelector('#stImport').onclick = () => $('#fileIn').click();
-  });
 }
 $('#fileIn').onchange = async e => {
   const f = e.target.files[0]; e.target.value = ''; if (!f) return;
@@ -605,8 +632,8 @@ $('#fileIn').onchange = async e => {
 
 /* ---------- Events ---------- */
 $('#tabs').onclick = e => { const b = e.target.closest('[data-tab]'); if (b) setTab(b.dataset.tab); };
-$('#settingsBtn').onclick = settingsDrawer;
-$('#driveBanner').onclick = e => { if (e.target.closest('[data-open-settings]')) settingsDrawer(); };
+$('#saveState').onclick = () => openSettings(true);
+$('#driveBanner').onclick = e => { if (e.target.closest('[data-open-settings]')) openSettings(true); };
 $('#main').addEventListener('click', e => {
   const r = e.target.closest('[data-recipe]'); if (r) return recipeDrawer(r.dataset.recipe);
   const b = e.target.closest('[data-bottle]'); if (b) return openBottle(b.dataset.bottle);
